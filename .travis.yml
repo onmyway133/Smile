@@ -1,0 +1,13 @@
+osx_image: xcode7.3
+language: objective-c
+
+before_install:
+- brew update
+- if brew outdated | grep -qx carthage; then brew upgrade carthage; fi
+- travis_wait 35 carthage bootstrap --platform iOS,Mac
+
+script:
+- xcodebuild clean build -project Smile.xcodeproj -scheme Smile-iOS -sdk iphonesimulator
+- xcodebuild test -project Smile.xcodeproj -scheme Smile-iOS -sdk iphonesimulator
+- xcodebuild clean build -project Smile.xcodeproj -scheme Smile-Mac -sdk macosx
+- xcodebuild test -project Smile.xcodeproj -scheme Smile-Mac -sdk macosx

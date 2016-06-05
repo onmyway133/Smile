@@ -1,0 +1,8 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'SmileDemo' do
+ pod 'Smile', path: '../../'
+end
+

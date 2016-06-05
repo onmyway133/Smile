@@ -1,0 +1,16 @@
+PODS:
+  - Smile (0.1.0)
+
+DEPENDENCIES:
+  - Smile (from `../../`)
+
+EXTERNAL SOURCES:
+  Smile:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  Smile: a3477b63005d455d177388e9d967902d39421891
+
+PODFILE CHECKSUM: 2a22bdd6f8616b3738af9f9fd7985e146d46ccdb
+
+COCOAPODS: 1.0.0
