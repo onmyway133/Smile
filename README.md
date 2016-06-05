@@ -7,6 +7,8 @@ Emoji in Swift
 [![License](https://img.shields.io/cocoapods/l/Smile.svg?style=flat)](http://cocoadocs.org/docsets/Smile)
 [![Platform](https://img.shields.io/cocoapods/p/Smile.svg?style=flat)](http://cocoadocs.org/docsets/Smile)
 
+![](Screenshots/Banner.png)
+
 ## Features
 
 
