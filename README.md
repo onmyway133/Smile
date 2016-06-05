@@ -32,7 +32,7 @@ Smile.search(["GRINNING"]) // 😁, 😸
 #### Search emoji flag by country code
 
 ```swift
-Smile.flag("no") // 🇳🇴
+Smile.emoji(countryCode: "no") // 🇳🇴
 ```
 
 #### Search emoji by alias
@@ -40,7 +40,7 @@ Smile.flag("no") // 🇳🇴
 Emoji data is from https://github.com/github/gemoji/blob/master/db/emoji.json
 
 ```swift
-Smile.emoji("japanese_castle" // 🏯
+Smile.emoji(alias: "japanese_castle") // 🏯
 ```
 
 ## Installation

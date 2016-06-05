@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "Smile"
   s.summary          = "Emoji in Swift"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.homepage         = "https://github.com/onmyway133/Smile"
   s.license          = 'MIT'
   s.author           = { "Khoa Pham" => "onmyway133@gmail.com" }

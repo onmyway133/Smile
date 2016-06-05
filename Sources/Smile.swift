@@ -26,7 +26,7 @@ public func standardName(emoji: Character) -> [String] {
 /**
  Return emoji for an alias
  */
-public func emoji(alias: String) -> String? {
+public func emoji(alias alias: String) -> String? {
   return emojiList[alias]
 }
 
@@ -49,7 +49,7 @@ public func list() -> [Character] {
 /**
  Return emoji for a flag
  */
-public func flag(countryCode: String) -> Character {
+public func emoji(countryCode countryCode: String) -> Character {
   let base = UnicodeScalar("🇦").value - UnicodeScalar("A").value
 
   let string = countryCode.uppercaseString.unicodeScalars.reduce("") {

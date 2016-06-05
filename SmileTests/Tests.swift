@@ -12,9 +12,9 @@ import Smile
 class Tests: XCTestCase {
 
   func test() {
-    XCTAssertEqual(Smile.flag("no"), "🇳🇴")
+    XCTAssertEqual(Smile.emoji(countryCode: "no"), "🇳🇴")
     XCTAssertEqual(Smile.standardName("🇳🇴"), ["REGIONAL INDICATOR SYMBOL LETTER N", "REGIONAL INDICATOR SYMBOL LETTER O"])
     XCTAssertEqual(Smile.search(["GRINNING"]), ["😁", "😸"])
-    XCTAssertEqual(Smile.emoji("japanese_castle"), "🏯")
+    XCTAssertEqual(Smile.emoji(alias: "japanese_castle"), "🏯")
   }
 }
