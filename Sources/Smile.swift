@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Return standard name for a emoji
+ */
 public func standardName(emoji: Character) -> [String] {
   let string = NSMutableString(string: String(emoji))
   var range = CFRangeMake(0, CFStringGetLength(string))
@@ -20,6 +23,16 @@ public func standardName(emoji: Character) -> [String] {
     }
 }
 
+/**
+ Return emoji for an alias
+ */
+public func emoji(alias: String) -> String? {
+  return emojiList[alias]
+}
+
+/**
+ List all emojis
+ */
 public func list() -> [Character] {
   let ranges = [
     0x1F601...0x1F64F,
@@ -33,6 +46,9 @@ public func list() -> [Character] {
   }
 }
 
+/**
+ Return emoji for a flag
+ */
 public func flag(countryCode: String) -> Character {
   let base = UnicodeScalar("🇦").value - UnicodeScalar("A").value
 
@@ -45,6 +61,9 @@ public func flag(countryCode: String) -> Character {
   return Character(string)
 }
 
+/**
+ Search emoji by keywords
+ */
 public func search(keywords: [String]) -> [Character] {
   var result: [Character] = []
 
