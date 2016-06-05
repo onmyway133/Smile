@@ -11,6 +11,37 @@ Emoji in Swift
 
 ## Features
 
+#### List all emojis
+
+```swift
+Smile.list()
+```
+
+#### Show standard name of an emoji
+
+```swift
+Smile.standardName("🇳🇴") // ["REGIONAL INDICATOR SYMBOL LETTER N", "REGIONAL INDICATOR SYMBOL LETTER O"])
+```
+
+#### Search emoji by keywords
+
+```swift
+Smile.search(["GRINNING"]) // 😁, 😸
+```
+
+#### Search emoji flag by country code
+
+```swift
+Smile.flag("no") // 🇳🇴
+```
+
+#### Search emoji by alias
+
+Emoji data is from https://github.com/github/gemoji/blob/master/db/emoji.json
+
+```swift
+Smile.emoji("japanese_castle" // 🏯
+```
 
 ## Installation
 
