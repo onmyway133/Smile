@@ -11,6 +11,8 @@
 		D2DBF1E51D04C6ED00166F7B /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1E31D04C6ED00166F7B /* Tests.swift */; };
 		D2DBF1E81D04C71300166F7B /* Smile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1E71D04C71300166F7B /* Smile.swift */; };
 		D2DBF1E91D04C71300166F7B /* Smile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1E71D04C71300166F7B /* Smile.swift */; };
+		D2DBF1EB1D04D1EB00166F7B /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1EA1D04D1EB00166F7B /* Emoji.swift */; };
+		D2DBF1EC1D04D1EB00166F7B /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1EA1D04D1EB00166F7B /* Emoji.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* Smile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Smile.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* Smile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* Smile.framework */; };
 /* End PBXBuildFile section */
@@ -35,6 +37,7 @@
 /* Begin PBXFileReference section */
 		D2DBF1E31D04C6ED00166F7B /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		D2DBF1E71D04C71300166F7B /* Smile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Smile.swift; sourceTree = "<group>"; };
+		D2DBF1EA1D04D1EB00166F7B /* Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		D500FD111C3AABED00782D78 /* Playground-iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-iOS.playground"; sourceTree = "<group>"; };
 		D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-Mac.playground"; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* Smile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Smile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +87,7 @@
 		D2DBF1E61D04C70A00166F7B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D2DBF1EA1D04D1EB00166F7B /* Emoji.swift */,
 				D2DBF1E71D04C71300166F7B /* Smile.swift */,
 			);
 			name = Sources;
@@ -311,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2DBF1EB1D04D1EB00166F7B /* Emoji.swift in Sources */,
 				D2DBF1E81D04C71300166F7B /* Smile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2DBF1EC1D04D1EB00166F7B /* Emoji.swift in Sources */,
 				D2DBF1E91D04C71300166F7B /* Smile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+let a: [String: String] = [
+  "": "",
+  "":"",
+]
