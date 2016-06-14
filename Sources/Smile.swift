@@ -11,7 +11,7 @@ import Foundation
 /**
  Return standard name for a emoji
  */
-public func standardName(emoji: Character) -> [String] {
+public func name(emoji emoji: Character) -> [String] {
   let string = NSMutableString(string: String(emoji))
   var range = CFRangeMake(0, CFStringGetLength(string))
   CFStringTransform(string, &range, kCFStringTransformToUnicodeName, false)
@@ -64,12 +64,12 @@ public func emoji(countryCode countryCode: String) -> Character {
 /**
  Search emoji by keywords
  */
-public func search(keywords: [String]) -> [Character] {
+public func emojis(keywords keywords: [String]) -> [Character] {
   var result: [Character] = []
 
   list().forEach { emoji in
     keywords.forEach { keyword in
-      standardName(emoji).forEach { name in
+      name(emoji: emoji).forEach { name in
         if name.rangeOfString(keyword) != nil {
           result.append(emoji)
         }
