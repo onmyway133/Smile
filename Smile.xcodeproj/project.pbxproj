@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D23991E41D10AA3600CA2E5D /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23991E31D10AA3600CA2E5D /* Categories.swift */; };
+		D23991E51D10B1FC00CA2E5D /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23991E31D10AA3600CA2E5D /* Categories.swift */; };
 		D2DBF1E41D04C6ED00166F7B /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1E31D04C6ED00166F7B /* Tests.swift */; };
 		D2DBF1E51D04C6ED00166F7B /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1E31D04C6ED00166F7B /* Tests.swift */; };
 		D2DBF1E81D04C71300166F7B /* Smile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1E71D04C71300166F7B /* Smile.swift */; };
@@ -342,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2DBF1EC1D04D1EB00166F7B /* Emoji.swift in Sources */,
+				D23991E51D10B1FC00CA2E5D /* Categories.swift in Sources */,
 				D2DBF1E91D04C71300166F7B /* Smile.swift in Sources */,
 				D2DBF1EF1D04D54300166F7B /* Helper.swift in Sources */,
 			);
