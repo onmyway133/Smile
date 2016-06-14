@@ -16,5 +16,6 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.name(emoji: "🇳🇴"), ["REGIONAL INDICATOR SYMBOL LETTER N", "REGIONAL INDICATOR SYMBOL LETTER O"])
     XCTAssertEqual(Smile.emojis(keywords: ["GRINNING"]), ["😁", "😸"])
     XCTAssertEqual(Smile.emoji(alias: "japanese_castle"), "🏯")
+    XCTAssertEqual(Smile.category(emoji: "😁"), "people")
   }
 }

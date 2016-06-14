@@ -79,3 +79,16 @@ public func emojis(keywords keywords: [String]) -> [Character] {
 
   return result
 }
+
+/**
+ Determine the category of emoji
+ */
+public func category(emoji emoji: Character) -> String? {
+  for (category, list) in emojiCategories {
+    if list.contains(String(emoji)) {
+      return category
+    }
+  }
+
+  return nil
+}

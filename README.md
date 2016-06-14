@@ -20,13 +20,13 @@ Smile.list()
 #### Show standard name of an emoji
 
 ```swift
-Smile.standardName("🇳🇴") // ["REGIONAL INDICATOR SYMBOL LETTER N", "REGIONAL INDICATOR SYMBOL LETTER O"])
+Smile.name(emoji: "🇳🇴") // ["REGIONAL INDICATOR SYMBOL LETTER N", "REGIONAL INDICATOR SYMBOL LETTER O"])
 ```
 
 #### Search emoji by keywords
 
 ```swift
-Smile.search(["GRINNING"]) // 😁, 😸
+Smile.emojis(keywords: ["GRINNING"]) // 😁, 😸
 ```
 
 #### Search emoji flag by country code
@@ -41,6 +41,14 @@ Emoji data is from https://github.com/github/gemoji/blob/master/db/emoji.json
 
 ```swift
 Smile.emoji(alias: "japanese_castle") // 🏯
+```
+
+#### Find category of emoji
+
+Emoji data is from https://github.com/github/gemoji/blob/master/db/Category-Emoji.json
+
+```swift
+Smile.category(emoji: "😁") // "people"
 ```
 
 ## Installation
