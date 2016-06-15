@@ -85,8 +85,8 @@ public func emojis(keywords keywords: [String]) -> [Character] {
  */
 public func alias(emoji emoji: Character) -> String? {
   for (key, value) in emojiList {
-    if key == String(emoji) {
-      return value
+    if value == String(emoji) {
+      return key
     }
   }
 
