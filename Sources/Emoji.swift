@@ -1,4 +1,4 @@
-let emojiList: [String: String] = [
+public let emojiList: [String: String] = [
   "smile": "😄",
   "smiley": "😃",
   "grinning": "😀",
@@ -351,7 +351,7 @@ let emojiList: [String: String] = [
   "loudspeaker": "📢",
   "mega": "📣",
   "hourglass_flowing_sand": "⏳",
-  "hourglass": "���",
+  "hourglass": "⌛",
   "alarm_clock": "⏰",
   "watch": "⌚",
   "unlock": "🔓",

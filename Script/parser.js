@@ -30,7 +30,7 @@ download('https://cdn.rawgit.com/github/gemoji/master/db/Category-Emoji.json', f
 function parse(data) {
   const json = JSON.parse(data);
 
-  var string = 'let emojiList: [String: String] = [\n'
+  var string = 'public let emojiList: [String: String] = [\n'
   for (var i=0; i<json.length; ++i) {
     const item = json[i];
 
@@ -53,7 +53,7 @@ function parse(data) {
 function parse_categories(data) {
   const json = JSON.parse(data)["EmojiDataArray"];
 
-  var string = 'let emojiCategories: [String: [String]] = [\n'
+  var string = 'public let emojiCategories: [String: [String]] = [\n'
   for (var i=0; i<json.length; ++i) {
     const item = json[i];
 
