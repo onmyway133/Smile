@@ -81,6 +81,19 @@ public func emojis(keywords keywords: [String]) -> [Character] {
 }
 
 /**
+ Find alias of emoji
+ */
+public func alias(emoji emoji: Character) -> String? {
+  for (key, value) in emojiList {
+    if key == String(emoji) {
+      return value
+    }
+  }
+
+  return nil
+}
+
+/**
  Determine the category of emoji
  */
 public func category(emoji emoji: Character) -> String? {

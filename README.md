@@ -43,6 +43,12 @@ Emoji data is from https://github.com/github/gemoji/blob/master/db/emoji.json
 Smile.emoji(alias: "japanese_castle") // 🏯
 ```
 
+#### Find alias by emoji
+
+```swift
+Smile.alias(emoji: "🏯") // japanese_castle
+```
+
 #### Find category of emoji
 
 Emoji data is from https://github.com/github/gemoji/blob/master/db/Category-Emoji.json
