@@ -52,10 +52,11 @@ public func list() -> [Character] {
 public func emoji(countryCode: String) -> Character {
   let base = UnicodeScalar("🇦").value - UnicodeScalar("A").value
 
-  let string = countryCode.uppercased().unicodeScalars.reduce("") {
-    var string = $0
-    string.append(String(describing: UnicodeScalar(base + $1.value)))
-    return string
+  var string = ""
+  countryCode.uppercased().unicodeScalars.forEach {
+    if let scala = UnicodeScalar(base + $0.value) {
+      string.append(String(describing: scala))
+    }
   }
 
   return Character(string)

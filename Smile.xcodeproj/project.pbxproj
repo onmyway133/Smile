@@ -111,7 +111,9 @@
 				D5C6298F1C3A8BDA007F7B7C /* SmileTests */,
 				D5B2E8A01C3A780C00C0327D /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		D5B2E8A01C3A780C00C0327D /* Products */ = {
 			isa = PBXGroup;
