@@ -11,13 +11,13 @@ import Foundation
 /**
  Return standard name for a emoji
  */
-public func name(emoji emoji: Character) -> [String] {
+public func name(emoji: Character) -> [String] {
   let string = NSMutableString(string: String(emoji))
   var range = CFRangeMake(0, CFStringGetLength(string))
   CFStringTransform(string, &range, kCFStringTransformToUnicodeName, false)
 
   return dropPrefix(String(string), subString: "\\N")
-    .componentsSeparatedByString("\\N")
+    .components(separatedBy: "\\N")
     .map {
       return remove($0, set: (Set(["{", "}"])))
     }
@@ -26,7 +26,7 @@ public func name(emoji emoji: Character) -> [String] {
 /**
  Return emoji for an alias
  */
-public func emoji(alias alias: String) -> String? {
+public func emoji(alias: String) -> String? {
   return emojiList[alias]
 }
 
@@ -41,20 +41,20 @@ public func list() -> [Character] {
     0x1F170...0x1F251
   ]
 
-  return ranges.flatten().map {
-    return Character(UnicodeScalar($0))
+  return ranges.joined().map {
+    return Character(UnicodeScalar($0)!)
   }
 }
 
 /**
  Return emoji for a flag
  */
-public func emoji(countryCode countryCode: String) -> Character {
+public func emoji(countryCode: String) -> Character {
   let base = UnicodeScalar("🇦").value - UnicodeScalar("A").value
 
-  let string = countryCode.uppercaseString.unicodeScalars.reduce("") {
+  let string = countryCode.uppercased().unicodeScalars.reduce("") {
     var string = $0
-    string.append(UnicodeScalar(base + $1.value))
+    string.append(String(describing: UnicodeScalar(base + $1.value)))
     return string
   }
 
@@ -64,13 +64,13 @@ public func emoji(countryCode countryCode: String) -> Character {
 /**
  Search emoji by keywords
  */
-public func emojis(keywords keywords: [String]) -> [Character] {
+public func emojis(keywords: [String]) -> [Character] {
   var result: [Character] = []
 
   list().forEach { emoji in
     keywords.forEach { keyword in
       name(emoji: emoji).forEach { name in
-        if name.rangeOfString(keyword) != nil {
+        if name.range(of: keyword) != nil {
           result.append(emoji)
         }
       }
@@ -83,7 +83,7 @@ public func emojis(keywords keywords: [String]) -> [Character] {
 /**
  Find alias of emoji
  */
-public func alias(emoji emoji: Character) -> String? {
+public func alias(emoji: Character) -> String? {
   for (key, value) in emojiList {
     if value == String(emoji) {
       return key
@@ -96,7 +96,7 @@ public func alias(emoji emoji: Character) -> String? {
 /**
  Determine the category of emoji
  */
-public func category(emoji emoji: Character) -> String? {
+public func category(emoji: Character) -> String? {
   for (category, list) in emojiCategories {
     if list.contains(String(emoji)) {
       return category

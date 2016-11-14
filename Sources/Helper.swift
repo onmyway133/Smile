@@ -8,17 +8,17 @@
 
 import Foundation
 
-func dropPrefix(string: String, subString: String) -> String {
+func dropPrefix(_ string: String, subString: String) -> String {
   guard string.hasPrefix(subString),
-    let range = string.rangeOfString(subString) else { return string }
+    let range = string.range(of: subString) else { return string }
 
-  return string.stringByReplacingCharactersInRange(range, withString: "")
+  return string.replacingCharacters(in: range, with: "")
 }
 
-func remove(string: String, set: Set<String>) -> String {
+func remove(_ string: String, set: Set<String>) -> String {
   var result = string
   set.forEach {
-    result = result.stringByReplacingOccurrencesOfString($0, withString: "")
+    result = result.replacingOccurrences(of: $0, with: "")
   }
 
   return result
