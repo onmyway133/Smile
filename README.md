@@ -85,7 +85,21 @@ Smile.replaceAlias(string: ":santa: is coming to :european_castle:") // 🎅 is 
 Emoji data is from https://github.com/github/gemoji/blob/master/db/Category-Emoji.json
 
 ```swift
-Smile.category(emoji: "😁") // "people"
+Smile.category(emoji: "😁") // people
+```
+
+### Manipulation
+
+#### Extract all emojis within a string
+
+```swift
+Smile.extractEmojis(string: "Find 🔑and🔎") // 🔑🔎
+```
+
+#### Remove all emojis within a string
+
+```swift
+Smile.removeEmojis(string: "Find 🔑and🔎") // Find and
 ```
 
 ## Installation

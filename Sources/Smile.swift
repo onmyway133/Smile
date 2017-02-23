@@ -149,6 +149,16 @@ public func category(emoji: Character) -> String? {
 
 // MARK: - Manipulation
 
-public func removeEmoji(string: String) -> String {
-  return string
+/// Extract all emojis within a string
+public func extractEmojis(string: String) -> String {
+  return String(string.characters.filter({
+    return isEmoji(character: $0)
+  }))
+}
+
+/// Remove all emojis within a string
+public func removeEmojis(string: String) -> String {
+  return String(string.characters.filter({
+    return !isEmoji(character: $0)
+  }))
 }
