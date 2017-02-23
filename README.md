@@ -20,7 +20,7 @@ Emoji in Swift
 Smile.list()
 ```
 
-### Query
+### Emoji
 
 #### Check if a character is emoji
 
@@ -32,6 +32,12 @@ Smile.isEmoji(character: "🎉") // true
 
 ```swift
 Smile.containsEmoji(string: "🎈 and 🎁") // true
+```
+
+#### Get emoji from unicode value
+
+```swift
+Smile.emoji(unicodeValue: 0x23F0) // ⏰
 ```
 
 ### Name
@@ -100,6 +106,18 @@ Smile.extractEmojis(string: "Find 🔑and🔎") // 🔑🔎
 
 ```swift
 Smile.removeEmojis(string: "Find 🔑and🔎") // Find and
+```
+
+####
+
+```swift
+Smile.assemble(emojis: [👨, ✈️]) // 👨‍✈️
+```
+
+####
+
+```swift
+Smile.deassemble(emoji: "👨‍✈️") // [👨, ✈️]]
 ```
 
 ## Installation
