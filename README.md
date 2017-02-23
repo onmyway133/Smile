@@ -12,11 +12,15 @@ Emoji in Swift
 
 ## Features
 
+## List
+
 #### List all emojis
 
 ```swift
 Smile.list()
 ```
+
+## Name
 
 #### Show standard name of an emoji
 
@@ -30,11 +34,15 @@ Smile.name(emoji: "🇳🇴") // ["REGIONAL INDICATOR SYMBOL LETTER N", "REGIONA
 Smile.emojis(keywords: ["GRINNING"]) // 😁, 😸
 ```
 
+## Flag
+
 #### Search emoji flag by country code
 
 ```swift
 Smile.emoji(countryCode: "no") // 🇳🇴
 ```
+
+## Alias
 
 #### Search emoji by alias
 
@@ -49,6 +57,14 @@ Smile.emoji(alias: "japanese_castle") // 🏯
 ```swift
 Smile.alias(emoji: "🏯") // japanese_castle
 ```
+
+#### Replace alias within a string
+
+```swift
+Smile.replaceAlias(string: ":santa: is coming to :european_castle:") // 🎅 is coming to 🏰
+```
+
+## Category
 
 #### Find category of emoji
 
