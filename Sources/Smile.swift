@@ -42,7 +42,6 @@ public func list() -> [Character] {
 
 // MARK: - Flag
 
-
 /// Return emoji for a flag
 public func emoji(countryCode: String) -> Character {
   let base = UnicodeScalar("🇦").value - UnicodeScalar("A").value
@@ -133,4 +132,11 @@ public func category(emoji: Character) -> String? {
   }
 
   return nil
+}
+
+// MARK: - Query
+
+public func containsEmoji(string: String) -> Bool {
+  let set = CharacterSet(charactersIn: emojiList.values.joined())
+  return string.rangeOfCharacter(from: set) != nil
 }

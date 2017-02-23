@@ -74,6 +74,14 @@ Emoji data is from https://github.com/github/gemoji/blob/master/db/Category-Emoj
 Smile.category(emoji: "😁") // "people"
 ```
 
+### Query
+
+#### Check if a string contains any emoji
+
+```swift
+Smile.containsEmoji(string: "🎈 and 🎁") // true
+```
+
 ## Installation
 
 **Smile** is available through [CocoaPods](http://cocoapods.org). To install
