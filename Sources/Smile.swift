@@ -8,9 +8,8 @@
 
 import Foundation
 
-/**
- Return standard name for a emoji
- */
+
+/// Return standard name for a emoji
 public func name(emoji: Character) -> [String] {
   let string = NSMutableString(string: String(emoji))
   var range = CFRangeMake(0, CFStringGetLength(string))
@@ -23,16 +22,14 @@ public func name(emoji: Character) -> [String] {
     }
 }
 
-/**
- Return emoji for an alias
- */
+
+/// Return emoji for an alias
 public func emoji(alias: String) -> String? {
   return emojiList[alias]
 }
 
-/**
- List all emojis
- */
+
+/// List all emojis
 public func list() -> [Character] {
   let ranges = [
     0x1F601...0x1F64F,
@@ -46,9 +43,8 @@ public func list() -> [Character] {
   }
 }
 
-/**
- Return emoji for a flag
- */
+
+/// Return emoji for a flag
 public func emoji(countryCode: String) -> Character {
   let base = UnicodeScalar("🇦").value - UnicodeScalar("A").value
 
@@ -62,9 +58,7 @@ public func emoji(countryCode: String) -> Character {
   return Character(string)
 }
 
-/**
- Search emoji by keywords
- */
+/// Search emoji by keywords
 public func emojis(keywords: [String]) -> [Character] {
   var result: [Character] = []
 
@@ -81,9 +75,8 @@ public func emojis(keywords: [String]) -> [Character] {
   return result
 }
 
-/**
- Find alias of emoji
- */
+
+/// Find alias of emoji
 public func alias(emoji: Character) -> String? {
   for (key, value) in emojiList {
     if value == String(emoji) {
@@ -94,9 +87,7 @@ public func alias(emoji: Character) -> String? {
   return nil
 }
 
-/**
- Determine the category of emoji
- */
+/// Determine the category of emoji
 public func category(emoji: Character) -> String? {
   for (category, list) in emojiCategories {
     if list.contains(String(emoji)) {
