@@ -20,6 +20,20 @@ Emoji in Swift
 Smile.list()
 ```
 
+### Query
+
+#### Check if a character is emoji
+
+```swift
+Smile.isEmoji(character: "🎉") // true
+```
+
+#### Check if a string contains any emoji
+
+```swift
+Smile.containsEmoji(string: "🎈 and 🎁") // true
+```
+
 ### Name
 
 #### Show standard name of an emoji
@@ -72,14 +86,6 @@ Emoji data is from https://github.com/github/gemoji/blob/master/db/Category-Emoj
 
 ```swift
 Smile.category(emoji: "😁") // "people"
-```
-
-### Query
-
-#### Check if a string contains any emoji
-
-```swift
-Smile.containsEmoji(string: "🎈 and 🎁") // true
 ```
 
 ## Installation

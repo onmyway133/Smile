@@ -8,22 +8,6 @@
 
 import Foundation
 
-// MARK: - Name
-
-/// Return standard name for a emoji
-public func name(emoji: Character) -> [String] {
-  let string = NSMutableString(string: String(emoji))
-  var range = CFRangeMake(0, CFStringGetLength(string))
-  CFStringTransform(string, &range, kCFStringTransformToUnicodeName, false)
-
-  return dropPrefix(String(string), subString: "\\N")
-    .components(separatedBy: "\\N")
-    .map {
-      return remove($0, set: (Set(["{", "}"])))
-    }
-}
-
-
 // MARK: - List
 
 /// List all emojis
@@ -37,6 +21,35 @@ public func list() -> [Character] {
 
   return ranges.joined().map {
     return Character(UnicodeScalar($0)!)
+  }
+}
+
+// MARK: - Query
+
+/// Check if a character is emoji
+public func isEmoji(character: Character) -> Bool {
+  let set = CharacterSet(charactersIn: emojiList.values.joined())
+  return String(character).rangeOfCharacter(from: set) != nil
+}
+
+/// Check if a string contains any emojis
+public func containsEmoji(string: String) -> Bool {
+  let set = CharacterSet(charactersIn: emojiList.values.joined())
+  return string.rangeOfCharacter(from: set) != nil
+}
+
+// MARK: - Name
+
+/// Return standard name for a emoji
+public func name(emoji: Character) -> [String] {
+  let string = NSMutableString(string: String(emoji))
+  var range = CFRangeMake(0, CFStringGetLength(string))
+  CFStringTransform(string, &range, kCFStringTransformToUnicodeName, false)
+
+  return dropPrefix(String(string), subString: "\\N")
+    .components(separatedBy: "\\N")
+    .map {
+      return remove($0, set: (Set(["{", "}"])))
   }
 }
 
@@ -134,9 +147,8 @@ public func category(emoji: Character) -> String? {
   return nil
 }
 
-// MARK: - Query
+// MARK: - Manipulation
 
-public func containsEmoji(string: String) -> Bool {
-  let set = CharacterSet(charactersIn: emojiList.values.joined())
-  return string.rangeOfCharacter(from: set) != nil
+public func removeEmoji(string: String) -> String {
+  return string
 }
