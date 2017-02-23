@@ -18,5 +18,7 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.emoji(alias: "japanese_castle"), "🏯")
     XCTAssertEqual(Smile.alias(emoji: "🏯"), "japanese_castle")
     XCTAssertEqual(Smile.category(emoji: "😁"), "people")
+    XCTAssertEqual(Smile.replaceAlias(string: ":santa: is coming to :european_castle:"), "🎅 is coming to 🏰")
+    XCTAssertEqual(Smile.replaceAlias(string: "In the :circus_tent:, there are :dog:, :cat: and :mouse:"), "In the 🎪, there are 🐶, 🐱 and 🐭")
   }
 }

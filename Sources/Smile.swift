@@ -94,6 +94,34 @@ public func alias(emoji: Character) -> String? {
   return nil
 }
 
+/// Replace alias within a string by emoji
+public func replaceAlias(string: String) -> String {
+  guard let regex = try? NSRegularExpression(pattern: ":.*?:", options: .caseInsensitive) else {
+    return string
+  }
+
+  let range = NSMakeRange(0, string.characters.count)
+  var mutableString = string
+  regex.enumerateMatches(in: string, options: [], range: range) { (result, flags, context) in
+    guard let range = result?.range else {
+      return
+    }
+
+    let start = string.index(string.startIndex, offsetBy: range.location)
+    let end = string.index(start, offsetBy: range.length)
+
+    let alias = string.substring(with: start..<end).replacingOccurrences(of: ":", with: "")
+
+    guard let emoji = emoji(alias: alias) else {
+      return
+    }
+
+    mutableString = mutableString.replacingOccurrences(of: ":\(alias):", with: emoji)
+  }
+
+  return mutableString
+}
+
 // MARK: - Category
 
 /// Determine the category of emoji
