@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Name
 
 /// Return standard name for a emoji
 public func name(emoji: Character) -> [String] {
@@ -23,11 +24,7 @@ public func name(emoji: Character) -> [String] {
 }
 
 
-/// Return emoji for an alias
-public func emoji(alias: String) -> String? {
-  return emojiList[alias]
-}
-
+// MARK: - List
 
 /// List all emojis
 public func list() -> [Character] {
@@ -43,6 +40,8 @@ public func list() -> [Character] {
   }
 }
 
+// MARK: - Flag
+
 
 /// Return emoji for a flag
 public func emoji(countryCode: String) -> Character {
@@ -57,6 +56,8 @@ public func emoji(countryCode: String) -> Character {
 
   return Character(string)
 }
+
+// MARK: - Keywords
 
 /// Search emoji by keywords
 public func emojis(keywords: [String]) -> [Character] {
@@ -75,6 +76,12 @@ public func emojis(keywords: [String]) -> [Character] {
   return result
 }
 
+// MARK: - Alias
+
+/// Return emoji for an alias
+public func emoji(alias: String) -> String? {
+  return emojiList[alias]
+}
 
 /// Find alias of emoji
 public func alias(emoji: Character) -> String? {
@@ -86,6 +93,8 @@ public func alias(emoji: Character) -> String? {
 
   return nil
 }
+
+// MARK: - Category
 
 /// Determine the category of emoji
 public func category(emoji: Character) -> String? {
