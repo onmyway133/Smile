@@ -12,7 +12,7 @@ Emoji in Swift
 
 ## Features
 
-## List
+### List
 
 #### List all emojis
 
@@ -20,7 +20,7 @@ Emoji in Swift
 Smile.list()
 ```
 
-## Name
+### Name
 
 #### Show standard name of an emoji
 
@@ -34,7 +34,7 @@ Smile.name(emoji: "🇳🇴") // ["REGIONAL INDICATOR SYMBOL LETTER N", "REGIONA
 Smile.emojis(keywords: ["GRINNING"]) // 😁, 😸
 ```
 
-## Flag
+### Flag
 
 #### Search emoji flag by country code
 
@@ -42,7 +42,7 @@ Smile.emojis(keywords: ["GRINNING"]) // 😁, 😸
 Smile.emoji(countryCode: "no") // 🇳🇴
 ```
 
-## Alias
+### Alias
 
 #### Search emoji by alias
 
@@ -64,7 +64,7 @@ Smile.alias(emoji: "🏯") // japanese_castle
 Smile.replaceAlias(string: ":santa: is coming to :european_castle:") // 🎅 is coming to 🏰
 ```
 
-## Category
+### Category
 
 #### Find category of emoji
 
