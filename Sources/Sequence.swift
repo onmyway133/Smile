@@ -8,30 +8,30 @@
 
 import Foundation
 
-struct Sequence {
+public struct Sequence {
 
-  struct Mark {
-    static let zeroWidthJoiner: Character = emoji(unicodeValue: 0x200D)!
-    static let presentationSelector: Character = emoji(unicodeValue: 0xFE0F)!
-    static let enclosingKeyCap: Character = emoji(unicodeValue: 0x20E3)!
+  public struct Mark {
+    public static let zeroWidthJoiner: String = emoji(unicodeValue: 0x200D)!
+    public static let presentationSelector: String = emoji(unicodeValue: 0xFE0F)!
+    public static let enclosingKeyCap: String = emoji(unicodeValue: 0x20E3)!
   }
 
-  struct SkinTone {
-    static let light: Character = emoji(unicodeValue: 0x1F3FB)!
-    static let mediumLight: Character = emoji(unicodeValue: 0x1F3FC)!
-    static let medium: Character = emoji(unicodeValue: 0x1F3FD)!
-    static let mediumDark: Character = emoji(unicodeValue: 0x1F3FE)!
-    static let dark: Character = emoji(unicodeValue: 0x1F3FF)!
+  public struct SkinTone {
+    public static let light: String = "🏻"
+    public static let mediumLight: String = "🏼"
+    public static let medium: String = "🏽"
+    public static let mediumDark: String = "🏾"
+    public static let dark: String = "🏿"
   }
 
-  static let all: [String] = [
-    String(Mark.zeroWidthJoiner),
-    String(Mark.presentationSelector),
-    String(Mark.enclosingKeyCap),
-    String(SkinTone.light),
-    String(SkinTone.mediumLight),
-    String(SkinTone.medium),
-    String(SkinTone.mediumDark),
-    String(SkinTone.dark)
+  public static let all: [String] = [
+    Mark.zeroWidthJoiner,
+    Mark.presentationSelector,
+    Mark.enclosingKeyCap,
+    SkinTone.light,
+    SkinTone.mediumLight,
+    SkinTone.medium,
+    SkinTone.mediumDark,
+    SkinTone.dark
   ]
 }

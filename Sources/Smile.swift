@@ -38,9 +38,9 @@ public func containsEmoji(string: String) -> Bool {
 }
 
 /// Get emoji from unicode value
-public func emoji(unicodeValue: Int) -> Character? {
+public func emoji(unicodeValue: Int) -> String? {
   if let scalar = UnicodeScalar(unicodeValue) {
-    return Character(scalar)
+    return String(Character(scalar))
   } else {
     return nil
   }
@@ -68,8 +68,8 @@ public func emoji(countryCode: String) -> String {
   let base = UnicodeScalar("🇦").value - UnicodeScalar("A").value
 
   var string = ""
-  countryCode.uppercased().unicodeScalars.forEach {
-    if let scala = UnicodeScalar(base + $0.value) {
+  countryCode.uppercased().unicodeScalars.forEach { scalarView in
+    if let scala = UnicodeScalar(base + scalarView.value) {
       string.append(String(describing: scala))
     }
   }
@@ -166,21 +166,23 @@ public func extractEmojis(string: String) -> String {
 
 /// Remove all emojis within a string
 public func removeEmojis(string: String) -> String {
-  return String(string.characters.filter({
-    return !isEmoji(character: String($0))
+  return String(string.characters.filter({ character in
+    return !isEmoji(character: String(character))
   }))
 }
 
 /// Assemble many emojis into one
 public func assemble(emojis: [String]) -> String {
-  var result = [String]()
+  var string = ""
   emojis.forEach { emoji in
-    emoji.unicodeScalars.forEach({ unicodeScalar in
-      result.append("U+\(String(unicodeScalar.value, radix: 6, uppercase: true))")
-    })
+    emoji.unicodeScalars.forEach { scalarView in
+      if let scalar = UnicodeScalar(scalarView.value) {
+        string.append(String(describing: scalar))
+      }
+    }
   }
 
-  return result.joined(separator: String(Sequence.Mark.zeroWidthJoiner))
+  return string
 }
 
 /// Disassemble an emoji into many
