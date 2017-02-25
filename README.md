@@ -1,5 +1,5 @@
 # Smile
-Emoji in Swift
+Emoji in Swift. For reference, go to https://github.com/onmyway133/emoji
 
 [![CI Status](http://img.shields.io/travis/onmyway133/Smile.svg?style=flat)](https://travis-ci.org/onmyway133/Smile)
 [![Version](https://img.shields.io/cocoapods/v/Smile.svg?style=flat)](http://cocoadocs.org/docsets/Smile)
