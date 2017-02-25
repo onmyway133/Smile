@@ -11,4 +11,9 @@ import Foundation
 struct Sequence {
   static let zeroWidthJoiner: Character = emoji(unicodeValue: 0x200D)!
   static let presentationSelector: Character = emoji(unicodeValue: 0xFE0F)!
+
+  static let all: [String] = [
+    String(zeroWidthJoiner),
+    String(presentationSelector)
+  ]
 }

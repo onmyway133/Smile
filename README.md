@@ -108,13 +108,13 @@ Smile.extractEmojis(string: "Find 🔑and🔎") // 🔑🔎
 Smile.removeEmojis(string: "Find 🔑and🔎") // Find and
 ```
 
-####
+#### Assemble
 
 ```swift
 Smile.assemble(emojis: [👨, ✈️]) // 👨‍✈️
 ```
 
-####
+#### Disassemble
 
 ```swift
 Smile.deassemble(emoji: "👨‍✈️") // [👨, ✈️]]

@@ -32,6 +32,7 @@ class Tests: XCTestCase {
 
   func testContainsEmoji() {
     XCTAssertEqual(Smile.containsEmoji(string: "🎈 and 🎁"), true)
+    XCTAssertEqual(Smile.containsEmoji(string: "👨‍✈️"), true)
     XCTAssertEqual(Smile.containsEmoji(string: "just plain text"), false)
   }
 
@@ -50,19 +51,22 @@ class Tests: XCTestCase {
   func testAlias() {
     XCTAssertEqual(Smile.emoji(alias: "japanese_castle"), "🏯")
     XCTAssertEqual(Smile.alias(emoji: "🏯"), "japanese_castle")
+    XCTAssertEqual(Smile.alias(emoji: "👨‍✈️"), "man_pilot")
   }
 
   func testReplaceAlias() {
     XCTAssertEqual(Smile.replaceAlias(string: ":santa: is coming to :european_castle:"), "🎅 is coming to 🏰")
-    XCTAssertEqual(Smile.replaceAlias(string: "In the :circus_tent:, there are :dog:, :cat: and :unicorn:"), "In the 🎪, there are 🐶, 🐱 and :unicorn:")
+    XCTAssertEqual(Smile.replaceAlias(string: "In the :circus_tent:, there are :dog:, :cat: and :super_unicorn:"), "In the 🎪, there are 🐶, 🐱 and :super_unicorn:")
   }
 
   func testExtracEmoji() {
     XCTAssertEqual(Smile.extractEmojis(string: "Find 🔑and🔎"), "🔑🔎")
+    XCTAssertEqual(Smile.extractEmojis(string: "Find the 👨‍✈️"), "👨‍✈️")
   }
 
   func testRemoveEmoji() {
     XCTAssertEqual(Smile.removeEmojis(string: "Find 🔑and🔎"), "Find and")
+    XCTAssertEqual(Smile.removeEmojis(string: "Remove the 👨‍✈️"), "Remove the ")
   }
 
   func testAssemble() {
