@@ -17,8 +17,8 @@
 		D2DBF1E91D04C71300166F7B /* Smile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1E71D04C71300166F7B /* Smile.swift */; };
 		D2DBF1EB1D04D1EB00166F7B /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1EA1D04D1EB00166F7B /* Emoji.swift */; };
 		D2DBF1EC1D04D1EB00166F7B /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1EA1D04D1EB00166F7B /* Emoji.swift */; };
-		D2DBF1EE1D04D54300166F7B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1ED1D04D54300166F7B /* Helper.swift */; };
-		D2DBF1EF1D04D54300166F7B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1ED1D04D54300166F7B /* Helper.swift */; };
+		D2DBF1EE1D04D54300166F7B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1ED1D04D54300166F7B /* Utils.swift */; };
+		D2DBF1EF1D04D54300166F7B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1ED1D04D54300166F7B /* Utils.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* Smile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Smile.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* Smile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* Smile.framework */; };
 /* End PBXBuildFile section */
@@ -46,7 +46,7 @@
 		D2DBF1E31D04C6ED00166F7B /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		D2DBF1E71D04C71300166F7B /* Smile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Smile.swift; sourceTree = "<group>"; };
 		D2DBF1EA1D04D1EB00166F7B /* Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
-		D2DBF1ED1D04D54300166F7B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		D2DBF1ED1D04D54300166F7B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D500FD111C3AABED00782D78 /* Playground-iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-iOS.playground"; sourceTree = "<group>"; };
 		D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-Mac.playground"; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* Smile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Smile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +99,7 @@
 				D23991E31D10AA3600CA2E5D /* Categories.swift */,
 				D2DBF1EA1D04D1EB00166F7B /* Emoji.swift */,
 				D2DBF1E71D04C71300166F7B /* Smile.swift */,
-				D2DBF1ED1D04D54300166F7B /* Helper.swift */,
+				D2DBF1ED1D04D54300166F7B /* Utils.swift */,
 				D20AFE9B1E5FA5CA00AFB7E9 /* Sequence.swift */,
 			);
 			name = Sources;
@@ -335,7 +335,7 @@
 				D2DBF1EB1D04D1EB00166F7B /* Emoji.swift in Sources */,
 				D23991E41D10AA3600CA2E5D /* Categories.swift in Sources */,
 				D2DBF1E81D04C71300166F7B /* Smile.swift in Sources */,
-				D2DBF1EE1D04D54300166F7B /* Helper.swift in Sources */,
+				D2DBF1EE1D04D54300166F7B /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +355,7 @@
 				D2DBF1EC1D04D1EB00166F7B /* Emoji.swift in Sources */,
 				D23991E51D10B1FC00CA2E5D /* Categories.swift in Sources */,
 				D2DBF1E91D04C71300166F7B /* Smile.swift in Sources */,
-				D2DBF1EF1D04D54300166F7B /* Helper.swift in Sources */,
+				D2DBF1EF1D04D54300166F7B /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

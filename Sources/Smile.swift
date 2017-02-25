@@ -40,7 +40,7 @@ public func containsEmoji(string: String) -> Bool {
 /// Get emoji from unicode value
 public func emoji(unicodeValue: Int) -> String? {
   if let scalar = UnicodeScalar(unicodeValue) {
-    return String(Character(scalar))
+    return String(scalar)
   } else {
     return nil
   }
@@ -54,10 +54,10 @@ public func name(emoji: String) -> [String] {
   var range = CFRangeMake(0, CFStringGetLength(string))
   CFStringTransform(string, &range, kCFStringTransformToUnicodeName, false)
 
-  return dropPrefix(String(string), subString: "\\N")
+  return Utils.dropPrefix(string: String(string), subString: "\\N")
     .components(separatedBy: "\\N")
     .map {
-      return remove($0, set: (Set(["{", "}"])))
+      return Utils.remove(string: $0, set: (Set(["{", "}"])))
   }
 }
 
@@ -66,15 +66,7 @@ public func name(emoji: String) -> [String] {
 /// Return emoji for a flag
 public func emoji(countryCode: String) -> String {
   let base = UnicodeScalar("🇦").value - UnicodeScalar("A").value
-
-  var string = ""
-  countryCode.uppercased().unicodeScalars.forEach { scalarView in
-    if let scala = UnicodeScalar(base + scalarView.value) {
-      string.append(String(describing: scala))
-    }
-  }
-
-  return string
+  return Utils.flatten(string: countryCode.uppercased(), base: base).joined()
 }
 
 // MARK: - Keywords
@@ -187,8 +179,8 @@ public func assemble(emojis: [String]) -> String {
 
 /// Disassemble an emoji into many
 public func disassemble(emoji: String) -> [String] {
-  return emoji.unicodeScalars.map({ unicodeScalar in
-    return String(Character(unicodeScalar))
+  return emoji.unicodeScalars.map({ scalarView in
+    return String(scalarView.value)
   }).filter({ character in
     return isEmoji(character: character)
   })
