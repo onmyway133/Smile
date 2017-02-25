@@ -27,6 +27,7 @@ class Tests: XCTestCase {
 
   func testIsEmoji() {
     XCTAssertEqual(Smile.isEmoji(character: "🎉"), true)
+    XCTAssertEqual(Smile.isEmoji(character: "👨‍✈️"), true)
     XCTAssertEqual(Smile.isEmoji(character: "a"), false)
   }
 
@@ -55,7 +56,7 @@ class Tests: XCTestCase {
   }
 
   func testReplaceAlias() {
-    XCTAssertEqual(Smile.replaceAlias(string: ":santa: is coming to :european_castle:"), "🎅 is coming to 🏰")
+    XCTAssertEqual(Smile.replaceAlias(string: ":construction_worker_man: is coming to :european_castle:"), "👷 is coming to 🏰")
     XCTAssertEqual(Smile.replaceAlias(string: "In the :circus_tent:, there are :dog:, :cat: and :super_unicorn:"), "In the 🎪, there are 🐶, 🐱 and :super_unicorn:")
   }
 
