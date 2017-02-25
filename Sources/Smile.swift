@@ -180,7 +180,7 @@ public func assemble(emojis: [String]) -> String {
     })
   }
 
-  return result.joined(separator: String(Sequence.zeroWidthJoiner))
+  return result.joined(separator: String(Sequence.Mark.zeroWidthJoiner))
 }
 
 /// Disassemble an emoji into many

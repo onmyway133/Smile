@@ -74,6 +74,7 @@ class Tests: XCTestCase {
   }
 
   func testDisassemble() {
+    XCTAssertEqual(Smile.disassemble(emoji: "👨‍🏫"), ["👨", "🏫"])
     XCTAssertEqual(Smile.disassemble(emoji: "👨‍✈️"), ["👨", "✈️"])
   }
 }
