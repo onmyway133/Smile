@@ -24,6 +24,11 @@ public struct Sequence {
     public static let dark: String = "🏿"
   }
 
+  public struct Gender {
+    public static let male: String = emoji(unicodeValue: 0x2642)!
+    public static let female: String = emoji(unicodeValue: 0x2640)!
+  }
+
   public static let all: [String] = [
     Mark.zeroWidthJoiner,
     Mark.presentationSelector,

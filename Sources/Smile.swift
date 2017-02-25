@@ -169,7 +169,7 @@ public func assemble(emojis: [String]) -> String {
   emojis.forEach { emoji in
     emoji.unicodeScalars.forEach { scalarView in
       if let scalar = UnicodeScalar(scalarView.value) {
-        string.append(String(describing: scalar))
+        string.append(String(scalar))
       }
     }
   }
