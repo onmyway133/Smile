@@ -186,5 +186,5 @@ public func assemble(emojis: [String]) -> String {
 
 /// Disassemble an emoji into many
 public func disassemble(emoji: String) -> [String] {
-  return 
+  return []
 }
