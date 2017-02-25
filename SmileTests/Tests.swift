@@ -59,7 +59,7 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.replaceAlias(string: "In the :circus_tent:, there are :dog:, :cat: and :super_unicorn:"), "In the 🎪, there are 🐶, 🐱 and :super_unicorn:")
   }
 
-  func testExtracEmoji() {
+  func testExtractEmoji() {
     XCTAssertEqual(Smile.extractEmojis(string: "Find 🔑and🔎"), "🔑🔎")
     XCTAssertEqual(Smile.extractEmojis(string: "Find the 👨‍✈️"), "👨‍✈️")
   }
