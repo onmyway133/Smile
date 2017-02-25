@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20AFE9C1E5FA5CA00AFB7E9 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20AFE9B1E5FA5CA00AFB7E9 /* Sequence.swift */; };
+		D20AFE9D1E5FA5CA00AFB7E9 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20AFE9B1E5FA5CA00AFB7E9 /* Sequence.swift */; };
 		D23991E41D10AA3600CA2E5D /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23991E31D10AA3600CA2E5D /* Categories.swift */; };
 		D23991E51D10B1FC00CA2E5D /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23991E31D10AA3600CA2E5D /* Categories.swift */; };
 		D2DBF1E41D04C6ED00166F7B /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBF1E31D04C6ED00166F7B /* Tests.swift */; };
@@ -39,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D20AFE9B1E5FA5CA00AFB7E9 /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		D23991E31D10AA3600CA2E5D /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		D2DBF1E31D04C6ED00166F7B /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		D2DBF1E71D04C71300166F7B /* Smile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Smile.swift; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 				D2DBF1EA1D04D1EB00166F7B /* Emoji.swift */,
 				D2DBF1E71D04C71300166F7B /* Smile.swift */,
 				D2DBF1ED1D04D54300166F7B /* Helper.swift */,
+				D20AFE9B1E5FA5CA00AFB7E9 /* Sequence.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -327,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D20AFE9C1E5FA5CA00AFB7E9 /* Sequence.swift in Sources */,
 				D2DBF1EB1D04D1EB00166F7B /* Emoji.swift in Sources */,
 				D23991E41D10AA3600CA2E5D /* Categories.swift in Sources */,
 				D2DBF1E81D04C71300166F7B /* Smile.swift in Sources */,
@@ -346,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D20AFE9D1E5FA5CA00AFB7E9 /* Sequence.swift in Sources */,
 				D2DBF1EC1D04D1EB00166F7B /* Emoji.swift in Sources */,
 				D23991E51D10B1FC00CA2E5D /* Categories.swift in Sources */,
 				D2DBF1E91D04C71300166F7B /* Smile.swift in Sources */,

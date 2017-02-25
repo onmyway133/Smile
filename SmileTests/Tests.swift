@@ -34,6 +34,7 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.containsEmoji(string: "🎈 and 🎁"), true)
     XCTAssertEqual(Smile.containsEmoji(string: "just plain text"), false)
 
+    print("👨‍✈️".unicodeScalars.map({ $0.value }))
     XCTAssertEqual(Smile.assemble(emojis: ["👨", "✈️"]), "👨‍✈️")
     XCTAssertEqual(Smile.disassemble(emoji: "👨‍✈️"), ["👨", "✈️"])
   }

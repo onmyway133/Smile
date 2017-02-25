@@ -174,10 +174,17 @@ public func removeEmojis(string: String) -> String {
 
 /// Assemble many emojis into one
 public func assemble(emojis: [String]) -> String {
-  return "A"
+  var result = [String]()
+  emojis.forEach { emoji in
+    emoji.unicodeScalars.forEach({ unicodeScalar in
+      result.append("U+\(String(unicodeScalar.value, radix: 6, uppercase: true))")
+    })
+  }
+
+  return result.joined(separator: String(Sequence.zeroWidthJoiner))
 }
 
 /// Disassemble an emoji into many
 public func disassemble(emoji: String) -> [String] {
-  return []
+  return 
 }
