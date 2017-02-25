@@ -151,16 +151,16 @@ public func category(emoji: String) -> String? {
 
 /// Extract all emojis within a string
 public func extractEmojis(string: String) -> String {
-  return String(string.characters.filter({
-    return isEmoji(character: String($0))
-  }))
+  return Utils.flatten(string: string).filter({ character in
+    return isRelatedToEmoji(character: character)
+  }).joined()
 }
 
 /// Remove all emojis within a string
 public func removeEmojis(string: String) -> String {
-  return String(string.characters.filter({ character in
-    return !isEmoji(character: String(character))
-  }))
+  return Utils.flatten(string: string).filter({ character in
+    return !isRelatedToEmoji(character: character)
+  }).joined()
 }
 
 /// Assemble many emojis into one
@@ -179,9 +179,16 @@ public func assemble(emojis: [String]) -> String {
 
 /// Disassemble an emoji into many
 public func disassemble(emoji: String) -> [String] {
-  return emoji.unicodeScalars.map({ scalarView in
-    return String(scalarView.value)
-  }).filter({ character in
+  return Utils.flatten(string: emoji).filter({ character in
     return isEmoji(character: character)
   })
+}
+
+// MARK: - Helper
+
+/// Check if a character is emoji, or emoji sequence marks
+fileprivate func isRelatedToEmoji(character: String) -> Bool {
+  return isEmoji(character: character)
+    || list().contains(character)
+    || Smile.Sequence.all.contains(character)
 }
