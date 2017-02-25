@@ -71,11 +71,13 @@ class Tests: XCTestCase {
   }
 
   func testAssemble() {
-    XCTAssertEqual(Smile.assemble(emojis: ["👍", Smile.Sequence.SkinTone.light]), "👍🏻")
+    XCTAssertEqual(Smile.assemble(emojis: ["👍", Smile.Sequence.SkinTone.dark]), "👍🏿")
+    XCTAssertEqual(Smile.assemble(emojis: ["👨", "🏫"]), "👨‍🏫")
     XCTAssertEqual(Smile.assemble(emojis: ["👨", "✈️"]), "👨‍✈️")
   }
 
   func testDisassemble() {
+    XCTAssertEqual(Smile.disassemble(emoji: "👍🏿"), ["👍"])
     XCTAssertEqual(Smile.disassemble(emoji: "👨‍🏫"), ["👨", "🏫"])
     XCTAssertEqual(Smile.disassemble(emoji: "👨‍✈️"), ["👨", "✈️"])
   }
