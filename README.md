@@ -120,6 +120,14 @@ Smile.assemble(emojis: [👨, ✈️]) // 👨‍✈️
 Smile.deassemble(emoji: "👨‍✈️") // [👨, ✈️]]
 ```
 
+## Script
+
+Update emoji list by running
+
+```js
+node parser.js
+```
+
 ## Installation
 
 **Smile** is available through [CocoaPods](http://cocoapods.org). To install
