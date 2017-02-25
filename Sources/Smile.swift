@@ -27,9 +27,9 @@ public func list() -> [Character] {
 // MARK: - Emoji
 
 /// Check if a character is emoji
-public func isEmoji(character: Character) -> Bool {
+public func isEmoji(character: String) -> Bool {
   let set = CharacterSet(charactersIn: emojiList.values.joined())
-  return String(character).rangeOfCharacter(from: set) != nil
+  return character.rangeOfCharacter(from: set) != nil
 }
 
 /// Check if a string contains any emojis
@@ -161,14 +161,14 @@ public func category(emoji: Character) -> String? {
 /// Extract all emojis within a string
 public func extractEmojis(string: String) -> String {
   return String(string.characters.filter({
-    return isEmoji(character: $0)
+    return isEmoji(character: String($0))
   }))
 }
 
 /// Remove all emojis within a string
 public func removeEmojis(string: String) -> String {
   return String(string.characters.filter({
-    return !isEmoji(character: $0)
+    return !isEmoji(character: String($0))
   }))
 }
 
@@ -186,5 +186,9 @@ public func assemble(emojis: [String]) -> String {
 
 /// Disassemble an emoji into many
 public func disassemble(emoji: String) -> [String] {
-  return []
+  return emoji.unicodeScalars.map({ unicodeScalar in
+    return Character(unicodeScalar)
+  }).filter({ character in
+    return isEmoji(character: String(character))
+  })
 }

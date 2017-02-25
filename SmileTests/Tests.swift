@@ -11,31 +11,65 @@ import Smile
 
 class Tests: XCTestCase {
 
-  func test() {
-    XCTAssertEqual(Smile.emoji(countryCode: "no"), "🇳🇴")
+  func testName() {
     XCTAssertEqual(Smile.name(emoji: "🇳🇴"), ["REGIONAL INDICATOR SYMBOL LETTER N", "REGIONAL INDICATOR SYMBOL LETTER O"])
-    XCTAssertEqual(Smile.emojis(keywords: ["GRINNING"]), ["😁", "😸"])
-    XCTAssertEqual(Smile.emoji(alias: "japanese_castle"), "🏯")
-    XCTAssertEqual(Smile.alias(emoji: "🏯"), "japanese_castle")
-    XCTAssertEqual(Smile.category(emoji: "😁"), "people")
-    XCTAssertEqual(Smile.replaceAlias(string: ":santa: is coming to :european_castle:"), "🎅 is coming to 🏰")
-    XCTAssertEqual(Smile.replaceAlias(string: "In the :circus_tent:, there are :dog:, :cat: and :unicorn:"), "In the 🎪, there are 🐶, 🐱 and :unicorn:")
+  }
 
+  func testKeywords() {
+    XCTAssertEqual(Smile.emojis(keywords: ["GRINNING"]), ["😁", "😸"])
+  }
+
+  func testEmoji() {
     XCTAssertEqual(Smile.emoji(unicodeValue: 0x23F0), "⏰")
     XCTAssertEqual(Smile.emoji(unicodeValue: 0x1F47B), "👻")
     XCTAssertEqual(Smile.emoji(unicodeValue: 0x1F517), "🔗")
+  }
 
-    XCTAssertEqual(Smile.extractEmojis(string: "Find 🔑and🔎"), "🔑🔎")
-    XCTAssertEqual(Smile.removeEmojis(string: "Find 🔑and🔎"), "Find and")
-
+  func testIsEmoji() {
     XCTAssertEqual(Smile.isEmoji(character: "🎉"), true)
     XCTAssertEqual(Smile.isEmoji(character: "a"), false)
+  }
 
+  func testContainsEmoji() {
     XCTAssertEqual(Smile.containsEmoji(string: "🎈 and 🎁"), true)
     XCTAssertEqual(Smile.containsEmoji(string: "just plain text"), false)
+  }
 
-    print("👨‍✈️".unicodeScalars.map({ $0.value }))
+  func testList() {
+    XCTAssertTrue(Smile.list().count > 0)
+  }
+
+  func testFlag() {
+    XCTAssertEqual(Smile.emoji(countryCode: "no"), "🇳🇴")
+  }
+
+  func testCategory() {
+    XCTAssertEqual(Smile.category(emoji: "😁"), "people")
+  }
+
+  func testAlias() {
+    XCTAssertEqual(Smile.emoji(alias: "japanese_castle"), "🏯")
+    XCTAssertEqual(Smile.alias(emoji: "🏯"), "japanese_castle")
+  }
+
+  func testReplaceAlias() {
+    XCTAssertEqual(Smile.replaceAlias(string: ":santa: is coming to :european_castle:"), "🎅 is coming to 🏰")
+    XCTAssertEqual(Smile.replaceAlias(string: "In the :circus_tent:, there are :dog:, :cat: and :unicorn:"), "In the 🎪, there are 🐶, 🐱 and :unicorn:")
+  }
+
+  func testExtracEmoji() {
+    XCTAssertEqual(Smile.extractEmojis(string: "Find 🔑and🔎"), "🔑🔎")
+  }
+
+  func testRemoveEmoji() {
+    XCTAssertEqual(Smile.removeEmojis(string: "Find 🔑and🔎"), "Find and")
+  }
+
+  func testAssemble() {
     XCTAssertEqual(Smile.assemble(emojis: ["👨", "✈️"]), "👨‍✈️")
+  }
+
+  func testDisassemble() {
     XCTAssertEqual(Smile.disassemble(emoji: "👨‍✈️"), ["👨", "✈️"])
   }
 }
