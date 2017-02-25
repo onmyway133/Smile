@@ -37,5 +37,22 @@ struct Utils {
       }
     })
   }
+
+  static func insert(element: String, betweenArray array: [String]) -> [String] {
+    var result = [String]()
+    array.forEach {
+      result.append($0)
+      result.append(element)
+    }
+
+    return Array(result.dropLast())
+  }
+
+  static func add<T>(element: T, array: [T]) -> [T] {
+    var array = array
+    array.append(element)
+
+    return array
+  }
 }
 

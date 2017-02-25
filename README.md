@@ -111,13 +111,13 @@ Smile.removeEmojis(string: "Find 🔑and🔎") // Find and
 #### Assemble
 
 ```swift
-Smile.assemble(emojis: [👨, ✈️]) // 👨‍✈️
+Smile.assemble(emojis: [👨, 🏫) // 👨‍🏫
 ```
 
 #### Disassemble
 
 ```swift
-Smile.deassemble(emoji: "👨‍✈️") // [👨, ✈️]]
+Smile.deassemble(emoji: "👨‍🏫) // [👨, 🏫]
 ```
 
 ## Script

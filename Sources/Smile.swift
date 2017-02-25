@@ -165,16 +165,23 @@ public func removeEmojis(string: String) -> String {
 
 /// Assemble many emojis into one
 public func assemble(emojis: [String]) -> String {
-  var string = ""
-  emojis.forEach { emoji in
-    emoji.unicodeScalars.forEach { scalarView in
-      if let scalar = UnicodeScalar(scalarView.value) {
-        string.append(String(scalar))
-      }
-    }
+  let simple = Utils.flatten(string: emojis.joined())
+  let joiner = Utils.insert(element: Smile.Sequence.Mark.zeroWidthJoiner, betweenArray: simple)
+  let selector = Utils.add(element: Smile.Sequence.Mark.presentationSelector, array: joiner)
+
+  if isEmoji(character: simple.joined()) {
+    return simple.joined()
   }
 
-  return string
+  if isEmoji(character: joiner.joined()) {
+    return joiner.joined()
+  }
+
+  if isEmoji(character: selector.joined()) {
+    return selector.joined()
+  }
+
+  return emojis.joined()
 }
 
 /// Disassemble an emoji into many
