@@ -11,7 +11,7 @@ import Foundation
 // MARK: - List
 
 /// List all emojis
-public func list() -> [Character] {
+public func list() -> [String] {
   let ranges = [
     0x1F601...0x1F64F,
     0x2702...0x27B0,
@@ -20,7 +20,7 @@ public func list() -> [Character] {
   ]
 
   return ranges.joined().map {
-    return Character(UnicodeScalar($0)!)
+    return String(Character(UnicodeScalar($0)!))
   }
 }
 
@@ -50,7 +50,7 @@ public func emoji(unicodeValue: Int) -> Character? {
 // MARK: - Name
 
 /// Return standard name for a emoji
-public func name(emoji: Character) -> [String] {
+public func name(emoji: String) -> [String] {
   let string = NSMutableString(string: String(emoji))
   var range = CFRangeMake(0, CFStringGetLength(string))
   CFStringTransform(string, &range, kCFStringTransformToUnicodeName, false)
@@ -65,7 +65,7 @@ public func name(emoji: Character) -> [String] {
 // MARK: - Flag
 
 /// Return emoji for a flag
-public func emoji(countryCode: String) -> Character {
+public func emoji(countryCode: String) -> String {
   let base = UnicodeScalar("🇦").value - UnicodeScalar("A").value
 
   var string = ""
@@ -75,14 +75,14 @@ public func emoji(countryCode: String) -> Character {
     }
   }
 
-  return Character(string)
+  return string
 }
 
 // MARK: - Keywords
 
 /// Search emoji by keywords
-public func emojis(keywords: [String]) -> [Character] {
-  var result: [Character] = []
+public func emojis(keywords: [String]) -> [String] {
+  var result: [String] = []
 
   list().forEach { emoji in
     keywords.forEach { keyword in
@@ -105,9 +105,9 @@ public func emoji(alias: String) -> String? {
 }
 
 /// Find alias of emoji
-public func alias(emoji: Character) -> String? {
+public func alias(emoji: String) -> String? {
   for (key, value) in emojiList {
-    if value == String(emoji) {
+    if value == emoji {
       return key
     }
   }
@@ -146,9 +146,9 @@ public func replaceAlias(string: String) -> String {
 // MARK: - Category
 
 /// Determine the category of emoji
-public func category(emoji: Character) -> String? {
+public func category(emoji: String) -> String? {
   for (category, list) in emojiCategories {
-    if list.contains(String(emoji)) {
+    if list.contains(emoji) {
       return category
     }
   }
@@ -187,8 +187,8 @@ public func assemble(emojis: [String]) -> String {
 /// Disassemble an emoji into many
 public func disassemble(emoji: String) -> [String] {
   return emoji.unicodeScalars.map({ unicodeScalar in
-    return Character(unicodeScalar)
+    return String(Character(unicodeScalar))
   }).filter({ character in
-    return isEmoji(character: String(character))
+    return isEmoji(character: character)
   })
 }
