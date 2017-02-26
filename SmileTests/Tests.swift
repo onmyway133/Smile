@@ -74,6 +74,7 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.assemble(emojis: ["👍", Smile.Sequence.SkinTone.dark]), "👍🏿")
     XCTAssertEqual(Smile.assemble(emojis: ["👨", "🏫"]), "👨‍🏫")
 //    XCTAssertEqual(Smile.assemble(emojis: ["👨", "✈️"]), "👨‍✈️")
+    XCTAssertEqual(Smile.assemble(emojis: ["👨", "👩", "👧", "👦"]), "👨‍👩‍👧‍👦")
   }
 
   func testDisassemble() {

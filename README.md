@@ -114,6 +114,7 @@ Smile.removeEmojis(string: "Find 🔑and🔎") // Find and
 
 ```swift
 Smile.assemble(emojis: [👨, 🏫) // 👨‍🏫
+Smile.assemble(emojis: ["👨", "👩", "👧", "👦"] // 👨‍👩‍👧‍👦
 ```
 
 #### Disassemble
