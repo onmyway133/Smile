@@ -133,7 +133,7 @@ Smile.assemble(emojis: ["👨", "👩", "👧", "👦"] // 👨‍👩‍👧‍
 #### Disassemble
 
 ```swift
-Smile.deassemble(emoji: "👨‍🏫") // [👨, 🏫]
+Smile.disassemble(emoji: "👨‍🏫") // [👨, 🏫]
 ```
 
 ## Script
