@@ -46,6 +46,17 @@ public func emoji(unicodeValue: Int) -> String? {
   }
 }
 
+/// Get the visible length of the emoji
+public func visibleLength(emoji: String) -> Int {
+  var count = 0
+  emoji.enumerateSubstrings(in: emoji.startIndex..<emoji.endIndex,
+        options: .byComposedCharacterSequences) { _ in
+    count += 1
+  }
+
+  return count
+}
+
 // MARK: - Name
 
 /// Return standard name for a emoji

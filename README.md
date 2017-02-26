@@ -42,6 +42,13 @@ Smile.containsEmoji(string: "🎈 and 🎁") // true
 Smile.emoji(unicodeValue: 0x23F0) // ⏰
 ```
 
+#### Get visible length of an emoji
+
+```swift
+"👨🏾‍🎓".characters.count // 3
+Smile.visibleLength(emoji: "👨🏾‍🎓") // 1
+```
+
 ### Name
 
 #### Show standard name of an emoji

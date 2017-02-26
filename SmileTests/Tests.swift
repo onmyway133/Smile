@@ -25,6 +25,11 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.emoji(unicodeValue: 0x1F517), "🔗")
   }
 
+  func testVisibleLength() {
+    XCTAssertEqual("👨🏾‍🎓".characters.count, 3)
+    XCTAssertEqual(Smile.visibleLength(emoji: "👨🏾‍🎓"), 1)
+  }
+
   func testIsEmoji() {
     XCTAssertEqual(Smile.isEmoji(character: "🎉"), true)
     XCTAssertEqual(Smile.isEmoji(character: "👨‍✈️"), true)
