@@ -18,6 +18,8 @@ Emoji in Swift. For reference, go to https://github.com/onmyway133/emoji
 
 ```swift
 Smile.list()
+emojiList
+emojiCategories
 ```
 
 ### Emoji
