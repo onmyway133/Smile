@@ -49,6 +49,12 @@ Smile.emoji(unicodeValue: 0x23F0) // ⏰
 Smile.visibleLength(emoji: "👨🏾‍🎓") // 1
 ```
 
+#### Unmodify an emoji
+
+```swift
+Smile.unmodify(emoji: "👨🏿") // 👨
+```
+
 ### Name
 
 #### Show standard name of an emoji

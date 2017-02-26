@@ -57,6 +57,16 @@ public func visibleLength(emoji: String) -> Int {
   return count
 }
 
+/// Unmodify an emoji
+public func unmodify(emoji: String) -> String {
+  guard emoji.characters.count > 0 else {
+    return emoji
+  }
+
+  let range = emoji.startIndex..<emoji.index(after: emoji.startIndex)
+  return emoji[range]
+}
+
 // MARK: - Name
 
 /// Return standard name for a emoji
