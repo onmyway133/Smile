@@ -32,6 +32,7 @@ public struct Sequence {
   public static let all: [String] = [
     Mark.zeroWidthJoiner,
     Mark.presentationSelector,
-    Mark.enclosingKeyCap
+    Mark.enclosingKeyCap,
+    SkinTone.light, SkinTone.mediumLight, SkinTone.mediumLight, SkinTone.mediumDark, SkinTone.dark
   ]
 }
