@@ -38,6 +38,12 @@ struct Utils {
     })
   }
 
+  static func flattenCharacters(string: String) -> [String] {
+    return string.characters.map({ character in
+      return String(character)
+    })
+  }
+
   static func insert(element: String, betweenArray array: [String]) -> [String] {
     var result = [String]()
     array.forEach {
