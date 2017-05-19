@@ -179,9 +179,15 @@ public func extractEmojis(string: String) -> String {
 
 /// Remove all emojis within a string
 public func removeEmojis(string: String) -> String {
-  return Utils.flatten(string: string).filter({ character in
+  let first =  Utils.flattenCharacters(string: string).filter({ character in
     return !isRelatedToEmoji(character: character)
   }).joined()
+
+  let second = Utils.flatten(string: first).filter({ character in
+    return !isRelatedToEmoji(character: character)
+  }).joined()
+
+  return second
 }
 
 /// Assemble many emojis into one
