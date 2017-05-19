@@ -11,9 +11,9 @@ import Foundation
 public struct Sequence {
 
   public struct Mark {
-    public static let zeroWidthJoiner: String = emoji(unicodeValue: 0x200D)!
-    public static let presentationSelector: String = emoji(unicodeValue: 0xFE0F)!
-    public static let enclosingKeyCap: String = emoji(unicodeValue: 0x20E3)!
+    public static let zeroWidthJoiner: String = emoji(unicodeValues: [0x200D])
+    public static let presentationSelector: String = emoji(unicodeValues: [0xFE0F])
+    public static let enclosingKeyCap: String = emoji(unicodeValues: [0x20E3])
   }
 
   public struct SkinTone {
@@ -25,8 +25,8 @@ public struct Sequence {
   }
 
   public struct Gender {
-    public static let male: String = emoji(unicodeValue: 0x2642)!
-    public static let female: String = emoji(unicodeValue: 0x2640)!
+    public static let male: String = emoji(unicodeValues: [0x2642])
+    public static let female: String = emoji(unicodeValues: [0x2640])
   }
 
   public static let all: [String] = [

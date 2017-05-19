@@ -20,9 +20,10 @@ class Tests: XCTestCase {
   }
 
   func testEmoji() {
-    XCTAssertEqual(Smile.emoji(unicodeValue: 0x23F0), "⏰")
-    XCTAssertEqual(Smile.emoji(unicodeValue: 0x1F47B), "👻")
-    XCTAssertEqual(Smile.emoji(unicodeValue: 0x1F517), "🔗")
+    XCTAssertEqual(Smile.emoji(unicodeValues: [0x23F0]), "⏰")
+    XCTAssertEqual(Smile.emoji(unicodeValues: [0x1F47B]), "👻")
+    XCTAssertEqual(Smile.emoji(unicodeValues: [0x1F517]), "🔗")
+    XCTAssertEqual(Smile.emoji(unicodeValues: [0x0001F468, 0x200D, 0x2708]), "👨‍✈")
   }
 
   func testVisibleLength() {

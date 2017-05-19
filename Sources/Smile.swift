@@ -38,12 +38,14 @@ public func containsEmoji(string: String) -> Bool {
 }
 
 /// Get emoji from unicode value
-public func emoji(unicodeValue: Int) -> String? {
-  if let scalar = UnicodeScalar(unicodeValue) {
+public func emoji(unicodeValues: [Int]) -> String {
+  return unicodeValues.flatMap({
+    guard let scalar = UnicodeScalar($0) else {
+      return nil
+    }
+
     return String(scalar)
-  } else {
-    return nil
-  }
+  }).joined()
 }
 
 /// Get the visible length of the emoji
