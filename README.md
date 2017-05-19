@@ -12,6 +12,10 @@ Emoji in Swift. For reference, go to https://github.com/onmyway133/emoji
 
 ## Features
 
+- [x] Support emoji sequences
+- [x] Handle skin tones, marks, genders, variation selectors
+- [x] Support new iOS emojis
+
 ### List
 
 #### List all emojis
