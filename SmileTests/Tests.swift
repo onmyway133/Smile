@@ -37,7 +37,7 @@ class Tests: XCTestCase {
 
   func testIsEmoji() {
     XCTAssertEqual(Smile.isEmoji(character: "🎉"), true)
-    XCTAssertEqual(Smile.isEmoji(character: "👨‍✈️"), true)
+    XCTAssertEqual(Smile.isEmoji(character: "👨‍✈"), true)
     XCTAssertEqual(Smile.isEmoji(character: "a"), false)
   }
 
@@ -62,7 +62,7 @@ class Tests: XCTestCase {
   func testAlias() {
     XCTAssertEqual(Smile.emoji(alias: "japanese_castle"), "🏯")
     XCTAssertEqual(Smile.alias(emoji: "🏯"), "japanese_castle")
-    XCTAssertEqual(Smile.alias(emoji: "👨‍✈️"), "man_pilot")
+    XCTAssertEqual(Smile.alias(emoji: "👨‍✈"), "man_pilot")
   }
 
   func testReplaceAlias() {
