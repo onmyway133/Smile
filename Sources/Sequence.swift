@@ -29,10 +29,19 @@ public struct Sequence {
     public static let female: String = emoji(unicodeValues: [0x2640])
   }
 
+  public struct VariationSelector {
+    public static let start: String = emoji(unicodeValues: [0xFE00])
+    public static let end: String = emoji(unicodeValues: [0xFE0F])
+
+    public static var all: [String] =
+      Array(start.unicodeScalars.first!.value...end.unicodeScalars.first!.value)
+      .map({ emoji(unicodeValues: [Int($0)]) })
+  }
+
   public static let all: [String] = [
     Mark.zeroWidthJoiner,
     Mark.presentationSelector,
     Mark.enclosingKeyCap,
     SkinTone.light, SkinTone.mediumLight, SkinTone.mediumLight, SkinTone.mediumDark, SkinTone.dark
-  ]
+  ] + VariationSelector.all
 }

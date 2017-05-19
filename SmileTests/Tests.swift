@@ -80,6 +80,9 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.removeEmojis(string: "Find 🔑and🔎"), "Find and")
     XCTAssertEqual(Smile.removeEmojis(string: "Remove the 👨‍🏫"), "Remove the ")
     XCTAssertEqual(Smile.removeEmojis(string: "🥑🦈🏍🛴🤡🦋🥚🦐🦑👰🇬🇧🎅🤑👍🏿☔️☂️☃️☀️❗️💀☠️⚔️⚖️☁️"), "")
+
+    // Variation selectors
+    XCTAssertEqual(Smile.removeEmojis(string: "👨‍✈️⚔️"), "")
   }
 
   func testAssemble() {
@@ -95,8 +98,8 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.disassemble(emoji: "👨‍✈"), ["👨"])
   }
 
-  func testPlatformEmojis() {
-    // 1st is from macOS, the 2nd is from Chrome
+  func testVariationSelectors() {
+    // emojis from iOS, macOS, Chrome has different variation selectors
     XCTAssertNotEqual("👨‍✈️", "👨‍✈")
     XCTAssertNotEqual("⚔", "⚔️")
   }
