@@ -36,10 +36,11 @@ Smile.isEmoji(character: "🎉") // true
 Smile.containsEmoji(string: "🎈 and 🎁") // true
 ```
 
-#### Get emoji from unicode value
+#### Get emoji from unicode values
 
 ```swift
-Smile.emoji(unicodeValue: 0x23F0) // ⏰
+XCTAssertEqual(Smile.emoji(unicodeValues: [0x1F47B]), "👻")
+XCTAssertEqual(Smile.emoji(unicodeValues: [0x0001F468, 0x200D, 0x2708]), "👨‍✈")
 ```
 
 #### Get visible length of an emoji
