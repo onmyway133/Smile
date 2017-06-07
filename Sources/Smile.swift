@@ -48,25 +48,13 @@ public func emoji(unicodeValues: [Int]) -> String {
   }).joined()
 }
 
-/// Get the visible length of the emoji
-public func visibleLength(emoji: String) -> Int {
-  var count = 0
-  emoji.enumerateSubstrings(in: emoji.startIndex..<emoji.endIndex,
-        options: .byComposedCharacterSequences) { _ in
-    count += 1
-  }
-
-  return count
-}
-
 /// Unmodify an emoji
 public func unmodify(emoji: String) -> String {
-  guard emoji.characters.count > 0 else {
+  guard let first = emoji.unicodeScalars.first?.value else {
     return emoji
   }
 
-  let range = emoji.startIndex..<emoji.index(after: emoji.startIndex)
-  return emoji[range]
+  return Smile.emoji(unicodeValues: [Int(first)])
 }
 
 // MARK: - Name

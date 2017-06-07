@@ -47,13 +47,6 @@ XCTAssertEqual(Smile.emoji(unicodeValues: [0x1F47B]), "👻")
 XCTAssertEqual(Smile.emoji(unicodeValues: [0x0001F468, 0x200D, 0x2708]), "👨‍✈")
 ```
 
-#### Get visible length of an emoji
-
-```swift
-"👨🏾‍🎓".characters.count // 3
-Smile.visibleLength(emoji: "👨🏾‍🎓") // 1
-```
-
 #### Unmodify an emoji
 
 ```swift

@@ -27,8 +27,8 @@ class Tests: XCTestCase {
   }
 
   func testVisibleLength() {
-    XCTAssertEqual("👨🏾‍🎓".characters.count, 3)
-    XCTAssertEqual(Smile.visibleLength(emoji: "👨🏾‍🎓"), 1)
+    XCTAssertEqual("👨🏾‍🎓".unicodeScalars.count, 4)
+    XCTAssertEqual("👨🏾‍🎓".characters.count, 1)
   }
 
   func testUnmodify() {
