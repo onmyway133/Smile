@@ -6,7 +6,7 @@ Emoji in Swift. For reference, go to https://github.com/onmyway133/emoji
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/Smile.svg?style=flat)](http://cocoadocs.org/docsets/Smile)
 [![Platform](https://img.shields.io/cocoapods/p/Smile.svg?style=flat)](http://cocoadocs.org/docsets/Smile)
-![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg)
+![Swift](https://img.shields.io/badge/%20in-swift%204.0-orange.svg)
 
 ![](Screenshots/Banner.png)
 
