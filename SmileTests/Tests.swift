@@ -47,7 +47,7 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.containsEmoji(string: "🎈 and 🎁"), true)
     XCTAssertEqual(Smile.containsEmoji(string: "👨‍✈️"), true)
     XCTAssertEqual(Smile.containsEmoji(string: "just plain text"), false)
-    XCTAssertEqual(Smile.containsEmoji(string: "text number 1 2 3"), false)
+    XCTAssertEqual(Smile.containsEmoji(string: "1 2 3"), false)
   }
 
   func testList() {

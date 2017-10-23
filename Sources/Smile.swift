@@ -34,7 +34,8 @@ public func isEmoji(character: String) -> Bool {
 /// Check if a string contains any emojis
 public func containsEmoji(string: String) -> Bool {
   let set = CharacterSet(charactersIn: emojiList.values.joined())
-  return string.rangeOfCharacter(from: set) != nil
+  let range = string.rangeOfCharacter(from: set, options: .literal, range: nil)
+  return range != nil
 }
 
 /// Get emoji from unicode value
@@ -133,7 +134,7 @@ public func replaceAlias(string: String) -> String {
     let start = string.index(string.startIndex, offsetBy: range.location)
     let end = string.index(start, offsetBy: range.length)
 
-    let alias = string.substring(with: start..<end).replacingOccurrences(of: ":", with: "")
+    let alias = string[start..<end].replacingOccurrences(of: ":", with: "")
 
     guard let emoji = emoji(alias: alias) else {
       return
