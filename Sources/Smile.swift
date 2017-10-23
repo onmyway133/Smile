@@ -34,7 +34,7 @@ public func isEmoji(character: String) -> Bool {
 /// Check if a string contains any emojis
 public func containsEmoji(string: String) -> Bool {
   let set = CharacterSet(charactersIn: emojiList.values.joined())
-  let range = string.rangeOfCharacter(from: set, options: .literal, range: nil)
+  let range = string.rangeOfCharacter(from: set, options: [], range: nil)
   return range != nil
 }
 
