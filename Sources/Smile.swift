@@ -34,7 +34,10 @@ public func isEmoji(character: String) -> Bool {
 /// Check if a string contains any emojis
 public func containsEmoji(string: String) -> Bool {
   let set = CharacterSet(charactersIn: emojiList.values.joined())
-  let range = string.rangeOfCharacter(from: set, options: [], range: nil)
+  let range = string
+    .smile_removingDigits
+    .rangeOfCharacter(from: set)
+
   return range != nil
 }
 
@@ -216,4 +219,10 @@ fileprivate func isRelatedToEmoji(character: String) -> Bool {
   return isEmoji(character: character)
     || list().contains(character)
     || Smile.Sequence.all.contains(character)
+}
+
+fileprivate extension String {
+  var smile_removingDigits: String {
+    return components(separatedBy: .decimalDigits).joined()
+  }
 }
