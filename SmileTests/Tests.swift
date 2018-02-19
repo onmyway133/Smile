@@ -29,7 +29,7 @@ class Tests: XCTestCase {
 
   func testVisibleLength() {
     XCTAssertEqual("👨🏾‍🎓".unicodeScalars.count, 4)
-    XCTAssertEqual("👨🏾‍🎓".characters.count, 1)
+    XCTAssertEqual("👨🏾‍🎓".count, 1)
   }
 
   func testUnmodify() {
