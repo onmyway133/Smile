@@ -14,7 +14,7 @@ import Foundation
 public func list() -> [String] {
   let ranges = [
     0x1F601...0x1F64F,
-    0x2702...0x27B0,
+    0x2600...0x27B0,
     0x1F680...0x1F6C0,
     0x1F170...0x1F251
   ]

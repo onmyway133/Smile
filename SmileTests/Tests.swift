@@ -21,6 +21,7 @@ class Tests: XCTestCase {
 
   func testEmoji() {
     XCTAssertEqual(Smile.emoji(unicodeValues: [0x23F0]), "⏰")
+    XCTAssertEqual(Smile.emoji(unicodeValues: [0x2600, 0xFE0F]), "☀️")
     XCTAssertEqual(Smile.emoji(unicodeValues: [0x1F47B]), "👻")
     XCTAssertEqual(Smile.emoji(unicodeValues: [0x1F517]), "🔗")
     XCTAssertEqual(Smile.emoji(unicodeValues: [0x0001F468, 0x200D, 0x2708]), "👨‍✈")
@@ -28,7 +29,7 @@ class Tests: XCTestCase {
 
   func testVisibleLength() {
     XCTAssertEqual("👨🏾‍🎓".unicodeScalars.count, 4)
-    XCTAssertEqual("👨🏾‍🎓".characters.count, 1)
+    XCTAssertEqual("👨🏾‍🎓".count, 1)
   }
 
   func testUnmodify() {
@@ -39,6 +40,7 @@ class Tests: XCTestCase {
   func testIsEmoji() {
     XCTAssertEqual(Smile.isEmoji(character: "🎉"), true)
     XCTAssertEqual(Smile.isEmoji(character: "👨‍✈"), true)
+    XCTAssertEqual(Smile.isEmoji(character: "☀️"), true)
     XCTAssertEqual(Smile.isEmoji(character: "a"), false)
     XCTAssertEqual(Smile.isEmoji(character: "1"), false)
   }
@@ -46,6 +48,7 @@ class Tests: XCTestCase {
   func testContainsEmoji() {
     XCTAssertEqual(Smile.containsEmoji(string: "🎈 and 🎁"), true)
     XCTAssertEqual(Smile.containsEmoji(string: "👨‍✈️"), true)
+    XCTAssertEqual(Smile.containsEmoji(string: "☀️"), true)
     XCTAssertEqual(Smile.containsEmoji(string: "just plain text"), false)
     XCTAssertEqual(Smile.containsEmoji(string: "1 2 3"), false)
   }
@@ -75,6 +78,7 @@ class Tests: XCTestCase {
 
   func testExtractEmoji() {
     XCTAssertEqual(Smile.extractEmojis(string: "Find 🔑and🔎"), "🔑🔎")
+    XCTAssertEqual(Smile.extractEmojis(string: "Find ☀️and⚙️"), "☀️⚙️")
     XCTAssertEqual(Smile.extractEmojis(string: "Find the 👨‍✈️👨‍🏫💂 and 👨‍💻"), "👨‍✈️👨‍🏫💂👨‍💻")
   }
 
