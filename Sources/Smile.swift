@@ -19,9 +19,15 @@ public func list() -> [String] {
     0x1F170...0x1F251
   ]
 
-  return ranges.joined().map {
+  var all = ranges.joined().map {
     return String(Character(UnicodeScalar($0)!))
   }
+
+  //⌨️⭐️
+  let solos = [0x2328, 0x2B50]
+  all.append(contentsOf: solos.map({ String(Character(UnicodeScalar($0)!))}))
+    
+  return all
 }
 
 // MARK: - Emoji
