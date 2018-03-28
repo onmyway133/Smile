@@ -734,7 +734,7 @@ public let emojiList: [String: String] = [
   "milky_way": "🌌",
   "bridge_at_night": "🌉",
   "foggy": "🌁",
-  "watch": "⌚️",
+  "watch": "⌚",
   "iphone": "📱",
   "calling": "📲",
   "computer": "💻",

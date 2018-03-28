@@ -81,6 +81,7 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.extractEmojis(string: "Find ☀️and⚙️"), "☀️⚙️")
     XCTAssertEqual(Smile.extractEmojis(string: "Find the solos ⌨️ and ⭐️"), "⌨️⭐️")
     XCTAssertEqual(Smile.extractEmojis(string: "Find the 👨‍✈️👨‍🏫💂 and 👨‍💻"), "👨‍✈️👨‍🏫💂👨‍💻")
+    XCTAssertEqual(Smile.extractEmojis(string: "⌚️"), "⌚️")
   }
 
   func testRemoveEmoji() {
