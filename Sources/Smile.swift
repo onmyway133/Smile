@@ -23,8 +23,8 @@ public func list() -> [String] {
     return String(Character(UnicodeScalar($0)!))
   }
 
-  //⌨️⭐️
-  let solos = [0x2328, 0x2B50]
+  //⌚️⌨️⭐️
+  let solos = [0x231A, 0x2328, 0x2B50]
   all.append(contentsOf: solos.map({ String(Character(UnicodeScalar($0)!))}))
     
   return all
