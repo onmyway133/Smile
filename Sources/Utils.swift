@@ -29,19 +29,19 @@ struct Utils {
   }
 
   static func flatten(string: String, base: UInt32 = 0) -> [String] {
-    return string.unicodeScalars.flatMap({ scalarView in
+    return string.unicodeScalars.compactMap { scalarView in
       if let scalar = UnicodeScalar(base + scalarView.value) {
         return String(scalar)
       } else {
         return nil
       }
-    })
+    }
   }
 
   static func flattenCharacters(string: String) -> [String] {
-    return string.characters.map({ character in
+    return string.map { character in
       return String(character)
-    })
+    }
   }
 
   static func insert(element: String, betweenArray array: [String]) -> [String] {
