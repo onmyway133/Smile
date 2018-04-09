@@ -49,7 +49,7 @@ public func containsEmoji(string: String) -> Bool {
 
 /// Get emoji from unicode value
 public func emoji(unicodeValues: [Int]) -> String {
-  return unicodeValues.flatMap({
+  return unicodeValues.compactMap({
     guard let scalar = UnicodeScalar($0) else {
       return nil
     }
@@ -133,7 +133,7 @@ public func replaceAlias(string: String) -> String {
     return string
   }
 
-  let range = NSMakeRange(0, string.characters.count)
+  let range = NSMakeRange(0, string.count)
   var mutableString = string
   regex.enumerateMatches(in: string, options: [], range: range) { (result, flags, context) in
     guard let range = result?.range else {
