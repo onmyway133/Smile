@@ -15,6 +15,7 @@ public func list() -> [String] {
   let ranges = [
     0x1F601...0x1F64F,
     0x2600...0x27B0,
+    0x23F0...0x23FA,
     0x1F680...0x1F6C0,
     0x1F170...0x1F251
   ]
@@ -24,7 +25,7 @@ public func list() -> [String] {
   }
 
   //⌚️⌨️⭐️
-  let solos = [0x231A, 0x2328, 0x2B50]
+  let solos = [0x231A, 0x231B, 0x2328, 0x2B50]
   all.append(contentsOf: solos.map({ String(Character(UnicodeScalar($0)!))}))
     
   return all
