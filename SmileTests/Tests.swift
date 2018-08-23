@@ -82,12 +82,14 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.extractEmojis(string: "Find the solos ⌨️ and ⭐️"), "⌨️⭐️")
     XCTAssertEqual(Smile.extractEmojis(string: "Find the 👨‍✈️👨‍🏫💂 and 👨‍💻"), "👨‍✈️👨‍🏫💂👨‍💻")
     XCTAssertEqual(Smile.extractEmojis(string: "⌚️"), "⌚️")
+    XCTAssertEqual(Smile.extractEmojis(string: "Hello ⏰⌛️💳 and 🆙."), "⏰⌛️💳🆙")
   }
 
   func testRemoveEmoji() {
     XCTAssertEqual(Smile.removeEmojis(string: "Find 🔑and🔎"), "Find and")
     XCTAssertEqual(Smile.removeEmojis(string: "Remove the 👨‍🏫"), "Remove the ")
     XCTAssertEqual(Smile.removeEmojis(string: "🥑🦈🏍🛴🤡🦋🥚🦐🦑👰🇬🇧🎅🤑👍🏿☔️☂️☃️☀️❗️💀☠️⚔️⚖️☁️"), "")
+    XCTAssertEqual(Smile.removeEmojis(string: "⏰⌛️💳🆙"), "")
 
     // Variation selectors
     XCTAssertEqual(Smile.removeEmojis(string: "👨‍✈️⚔️"), "")
