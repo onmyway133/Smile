@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "Smile"
   s.summary          = "Emoji in Swift"
-  s.version          = "1.3.1"
+  s.version          = "2.0.0"
   s.homepage         = "https://github.com/onmyway133/Smile"
   s.license          = 'MIT'
   s.author           = { "Khoa Pham" => "onmyway133@gmail.com" }
@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
   s.source_files = 'Sources/**/*'
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
 end
