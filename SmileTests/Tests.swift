@@ -39,7 +39,7 @@ class Tests: XCTestCase {
 
   func testIsEmoji() {
     XCTAssertEqual(Smile.isEmoji(character: "🎉"), true)
-    XCTAssertEqual(Smile.isEmoji(character: "👨‍✈"), true)
+    XCTAssertEqual(Smile.isEmoji(character: "👨‍✈️"), true)
     XCTAssertEqual(Smile.isEmoji(character: "☀️"), true)
     XCTAssertEqual(Smile.isEmoji(character: "a"), false)
     XCTAssertEqual(Smile.isEmoji(character: "1"), false)
@@ -62,18 +62,18 @@ class Tests: XCTestCase {
   }
 
   func testCategory() {
-    XCTAssertEqual(Smile.category(emoji: "😁"), "people")
+    XCTAssertEqual(Smile.category(emoji: "😁"), "Smileys & Emotion")
   }
 
   func testAlias() {
     XCTAssertEqual(Smile.emoji(alias: "japanese_castle"), "🏯")
     XCTAssertEqual(Smile.alias(emoji: "🏯"), "japanese_castle")
-    XCTAssertEqual(Smile.alias(emoji: "👨‍✈"), "man_pilot")
+    XCTAssertEqual(Smile.alias(emoji: "👨‍✈️"), "man_pilot")
   }
 
   func testReplaceAlias() {
-    XCTAssertEqual(Smile.replaceAlias(string: ":construction_worker_man: is coming to :european_castle:"), "👷 is coming to 🏰")
-    XCTAssertEqual(Smile.replaceAlias(string: "In the :circus_tent:, there are :dog:, :cat: and :super_unicorn:"), "In the 🎪, there are 🐶, 🐱 and :super_unicorn:")
+    XCTAssertEqual(Smile.replaceAlias(string: ":construction_worker_man: is coming to :european_castle:"), "👷‍♂️ is coming to 🏰")
+    XCTAssertEqual(Smile.replaceAlias(string: "Let's sing together: In the :circus_tent:, there are :dog:, :cat: and :super_unicorn:"), "Let's sing together: In the 🎪, there are 🐶, 🐱 and :super_unicorn:")
   }
 
   func testExtractEmoji() {
@@ -88,7 +88,7 @@ class Tests: XCTestCase {
   func testRemoveEmoji() {
     XCTAssertEqual(Smile.removeEmojis(string: "Find 🔑and🔎"), "Find and")
     XCTAssertEqual(Smile.removeEmojis(string: "Remove the 👨‍🏫"), "Remove the ")
-    XCTAssertEqual(Smile.removeEmojis(string: "🥑🦈🏍🛴🤡🦋🥚🦐🦑👰🇬🇧🎅🤑👍🏿☔️☂️☃️☀️❗️💀☠️⚔️⚖️☁️"), "")
+    XCTAssertEqual(Smile.removeEmojis(string: "🥑🦈🛴🤡🦋🥚🦐🦑👰🇬🇧🎅🤑👍🏿☔️☂️☃️☀️❗️💀☠️⚔️⚖️☁️"), "")
     XCTAssertEqual(Smile.removeEmojis(string: "⏰⌛️💳🆙"), "")
 
     // Variation selectors
@@ -98,7 +98,7 @@ class Tests: XCTestCase {
   func testAssemble() {
     XCTAssertEqual(Smile.assemble(emojis: ["👍", Smile.Sequence.SkinTone.dark]), "👍🏿")
     XCTAssertEqual(Smile.assemble(emojis: ["👨", "🏫"]), "👨‍🏫")
-    XCTAssertEqual(Smile.assemble(emojis: ["👨", "✈"]), "👨‍✈")
+    XCTAssertEqual(Smile.assemble(emojis: ["👨", "✈"]), "👨‍✈️")
     XCTAssertEqual(Smile.assemble(emojis: ["👨", "👩", "👧", "👦"]), "👨‍👩‍👧‍👦")
   }
 
