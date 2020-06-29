@@ -130,7 +130,7 @@ public func alias(emoji: String) -> String? {
 
 /// Replace alias within a string by emoji
 public func replaceAlias(string: String) -> String {
-  guard let regex = try? NSRegularExpression(pattern: ":.*?:", options: .caseInsensitive) else {
+  guard let regex = try? NSRegularExpression(pattern: ":\\w*?:", options: .caseInsensitive) else {
     return string
   }
 
