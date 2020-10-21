@@ -42,13 +42,18 @@ emojiCategories
 #### Check if a character is emoji
 
 ```swift
-Smile.isEmoji(character: "🎉") // true
+Smile.isEmoji(emojiRule: .containsOnlyEmoji, string: "hello 👋") // false
+Smile.isEmoji(emojiRule: .containsOnlyEmoji, string: "👋") // true
+
+Smile.isEmoji(emojiRule: .isSingleEmoji, string: "👍👎") // false
+Smile.isEmoji(emojiRule: .isSingleEmoji, string: "👍") // true
 ```
 
 #### Check if a string contains any emoji
 
 ```swift
-Smile.containsEmoji(string: "🎈 and 🎁") // true
+Smile.isEmoji(emojiRule: .containsEmoji, string: "hello") // false
+Smile.isEmoji(emojiRule: .containsEmoji, string: "hello 👋") // true
 ```
 
 #### Get emoji from unicode values
