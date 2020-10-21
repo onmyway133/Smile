@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - List
 
@@ -34,8 +35,22 @@ public func list() -> [String] {
 // MARK: - Emoji
 
 /// Check if a character is emoji
+@available(iOS, deprecated: 10.2, renamed: "isEmoji(emojiRule:string:)")
 public func isEmoji(character: String) -> Bool {
   return emojiList.values.contains(character)
+}
+
+/// Check String for emoji characters using emojiRule
+@available(iOS 10.2, *)
+public func isEmoji(emojiRule: emojiRule, string: String) -> Bool {
+    switch emojiRule {
+    case .containsEmoji:
+        return string.containsEmoji
+    case .containsOnlyEmoji:
+        return string.containsOnlyEmoji
+    case .isSingleEmoji:
+        return string.isSingleEmoji
+    }
 }
 
 /// Check if a string contains any emojis
@@ -130,7 +145,7 @@ public func alias(emoji: String) -> String? {
 
 /// Replace alias within a string by emoji
 public func replaceAlias(string: String) -> String {
-  guard let regex = try? NSRegularExpression(pattern: ":\\w*?:", options: .caseInsensitive) else {
+  guard let regex = try? NSRegularExpression(pattern: ":.*?:", options: .caseInsensitive) else {
     return string
   }
 
@@ -232,4 +247,42 @@ fileprivate extension String {
   var smile_removingDigits: String {
     return components(separatedBy: .decimalDigits).joined()
   }
+}
+
+// MARK: - String Extentions
+
+@available(iOS 10.2, *)
+public extension Character {
+    /// A simple emoji is one scalar and presented to the user as an Emoji
+    var isSimpleEmoji: Bool {
+        guard let firstScalar = unicodeScalars.first else { return false }
+        return firstScalar.properties.isEmoji && firstScalar.value > 0x238C
+    }
+
+    /// Checks if the scalars will be merged into an emoji
+    var isCombinedIntoEmoji: Bool { unicodeScalars.count > 1 && unicodeScalars.first?.properties.isEmoji ?? false }
+
+    var isEmoji: Bool { isSimpleEmoji || isCombinedIntoEmoji }
+}
+
+@available(iOS 10.2, *)
+public extension String {
+    var isSingleEmoji: Bool { count == 1 && containsEmoji }
+
+    var containsEmoji: Bool { contains { $0.isEmoji } }
+
+    var containsOnlyEmoji: Bool { !isEmpty && !contains { !$0.isEmoji } }
+
+    var emojiString: String { emojis.map { String($0) }.reduce("", +) }
+
+    var emojis: [Character] { filter { $0.isEmoji } }
+
+    var emojiScalars: [UnicodeScalar] { filter { $0.isEmoji }.flatMap { $0.unicodeScalars } }
+}
+
+@available(iOS 10.2, *)
+public enum emojiRule {
+    case isSingleEmoji
+    case containsEmoji
+    case containsOnlyEmoji
 }
