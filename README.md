@@ -75,10 +75,10 @@ Smile.isSingleEmoji("just plain text") // false
 #### Check if a string contains only emojis
 
 ```swift
-Smile.isSingleEmoji("🎈 and 🎁") // false
-Smile.isSingleEmoji("👨‍") // true
-Smile.isSingleEmoji("👩🏽‍🧑‍") // true
-Smile.isSingleEmoji("just plain text") // false
+Smile.isEmojiOnly("🎈 and 🎁") // false
+Smile.isEmojiOnly("👨‍") // true
+Smile.isEmojiOnly("👩🏽‍🧑‍") // true
+Smile.isEmojiOnly("just plain text") // false
 ```
 
 #### Get emoji from unicode values
