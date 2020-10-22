@@ -39,7 +39,7 @@ public func isEmoji(character: String) -> Bool {
 }
 
 /// Check if a string contains any emojis
-@available(iOS, deprecated: 10.2, renamed: "isEmoji(_string:)")
+@available(iOS, deprecated: 10.2, renamed: "containsEmoji(_string:)")
 public func containsEmoji(string: String) -> Bool {
   let set = CharacterSet(charactersIn: emojiList.values.joined())
   let range = string
