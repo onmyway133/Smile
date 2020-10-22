@@ -113,4 +113,61 @@ class Tests: XCTestCase {
     XCTAssertNotEqual("👨‍✈️", "👨‍✈")
     XCTAssertNotEqual("⚔", "⚔️")
   }
+  
+  @available(iOS 10.2, *)
+  func testContainsEmojiNew(){
+    XCTAssertEqual(Smile.containsEmoji("🎈 and 🎁"), true)
+    XCTAssertEqual(Smile.containsEmoji("👨‍✈️"), true)
+    XCTAssertEqual(Smile.containsEmoji("☀️"), true)
+    XCTAssertEqual(Smile.containsEmoji("just plain text"), false)
+    XCTAssertEqual(Smile.containsEmoji("1 2 3"), false)
+    XCTAssertEqual(Smile.containsEmoji("*"), false)
+  }
+  
+  @available(iOS 10.2, *)
+  func testCountEmoji(){
+    XCTAssertEqual(Smile.countEmoji("🎈 and 🎁"), 2)
+    XCTAssertEqual(Smile.countEmoji("👨‍✈️"), 1)
+    XCTAssertEqual(Smile.countEmoji("☀️*"), 1)
+    XCTAssertEqual(Smile.countEmoji("just plain text"), 0)
+    XCTAssertEqual(Smile.countEmoji("1 2 3"), 0)
+  }
+  
+  @available(iOS 10.2, *)
+  func testIsEmojiOnly(){
+    XCTAssertEqual(Smile.isEmojiOnly("🎈 and 🎁"), false)
+    XCTAssertEqual(Smile.isEmojiOnly("👨‍✈️"), true)
+    XCTAssertEqual(Smile.isEmojiOnly("☀️"), true)
+    XCTAssertEqual(Smile.isEmojiOnly("☀️*"), false)
+    XCTAssertEqual(Smile.isEmojiOnly("👩🏽‍🎓🧑‍💻"), true)
+    XCTAssertEqual(Smile.isEmojiOnly("just plain text"), false)
+    XCTAssertEqual(Smile.isEmojiOnly("1 2 3"), false)
+    XCTAssertEqual(Smile.isEmojiOnly("*"), false)
+  }
+  
+  @available(iOS 10.2, *)
+  func testIsSingleEmoji(){
+    XCTAssertEqual(Smile.isSingleEmoji("🎈 and 🎁"), false)
+    XCTAssertEqual(Smile.isSingleEmoji("👨‍✈️"), true)
+    XCTAssertEqual(Smile.isSingleEmoji("☀️"), true)
+    XCTAssertEqual(Smile.isSingleEmoji("☀️*"), false)
+    XCTAssertEqual(Smile.isSingleEmoji("👩🏽‍🎓🧑‍💻"), false)
+    XCTAssertEqual(Smile.isSingleEmoji("just plain text"), false)
+    XCTAssertEqual(Smile.isSingleEmoji("1 2 3"), false)
+    XCTAssertEqual(Smile.isSingleEmoji("*"), false)
+  }
+  
+  @available(iOS 10.2, *)
+  func testCountNonEmoji(){
+    XCTAssertEqual(Smile.countNonEmoji("🎈 and 🎁"), 5)
+    XCTAssertEqual(Smile.countNonEmoji("👨‍✈️"), 0)
+    XCTAssertEqual(Smile.countNonEmoji("☀️"), 0)
+    XCTAssertEqual(Smile.countNonEmoji("☀️*"), 1)
+    XCTAssertEqual(Smile.countNonEmoji("👩🏽‍🎓🧑‍💻"), 0)
+    XCTAssertEqual(Smile.countNonEmoji("just plain text"), 15)
+    XCTAssertEqual(Smile.countNonEmoji("1 2 3"), 5)
+    XCTAssertEqual(Smile.countNonEmoji("*"), 1)
+  }
+  
+  
 }

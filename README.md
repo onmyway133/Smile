@@ -51,6 +51,36 @@ Smile.isEmoji(character: "🎉") // true
 Smile.containsEmoji(string: "🎈 and 🎁") // true
 ```
 
+#### Count number of emoji characters in a string
+
+```swift
+Smile.countEmoji("🎈 and 🎁") // 2
+```
+
+#### Count number of non-emoji characters in a string
+
+```swift
+Smile.countNonEmoji("🎈 and 🎁") // 5
+```
+
+#### Check if a string contains only a single emoji
+
+```swift
+Smile.isSingleEmoji("🎈 and 🎁") // false
+Smile.isSingleEmoji("👨‍") // true
+Smile.isSingleEmoji("👩🏽‍🧑‍") // false
+Smile.isSingleEmoji("just plain text") // false
+```
+
+#### Check if a string contains only emojis
+
+```swift
+Smile.isEmojiOnly("🎈 and 🎁") // false
+Smile.isEmojiOnly("👨‍") // true
+Smile.isEmojiOnly("👩🏽‍🧑‍") // true
+Smile.isEmojiOnly("just plain text") // false
+```
+
 #### Get emoji from unicode values
 
 ```swift
