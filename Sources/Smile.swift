@@ -295,31 +295,3 @@ fileprivate extension String {
     return components(separatedBy: .decimalDigits).joined()
   }
 }
-
-// MARK: - emojiRules
-
-/// Run supplied emojiRule against string
-@available(iOS 10.2, *)
-public func checkEmojiRule(emojiRule: emojiRule, string: String) -> Any{
-  switch emojiRule {
-  case .containsEmoji:
-    return Smile.containsEmoji(string)
-  case .isEmojiOnly:
-    return Smile.isEmojiOnly(string)
-  case .isSingleEmoji:
-    return Smile.isSingleEmoji(string)
-  case .countEmoji:
-    return Smile.countEmoji(string)
-  case .countNonEmoji:
-    return Smile.countNonEmoji(string)
-  }
-}
-
-
-public enum emojiRule {
-  case containsEmoji
-  case isEmojiOnly
-  case isSingleEmoji
-  case countEmoji
-  case countNonEmoji
-}
