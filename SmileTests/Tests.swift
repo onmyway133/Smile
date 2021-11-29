@@ -114,7 +114,7 @@ class Tests: XCTestCase {
     XCTAssertNotEqual("⚔", "⚔️")
   }
   
-  @available(iOS 10.2, *)
+  @available(macOS 10.12.2, iOS 10.2, tvOS 10.1, watchOS 3.1.1, *)
   func testContainsEmojiNew(){
     XCTAssertEqual(Smile.containsEmoji("🎈 and 🎁"), true)
     XCTAssertEqual(Smile.containsEmoji("👨‍✈️"), true)
@@ -124,7 +124,7 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.containsEmoji("*"), false)
   }
   
-  @available(iOS 10.2, *)
+  @available(macOS 10.12.2, iOS 10.2, tvOS 10.1, watchOS 3.1.1, *)
   func testCountEmoji(){
     XCTAssertEqual(Smile.countEmoji("🎈 and 🎁"), 2)
     XCTAssertEqual(Smile.countEmoji("👨‍✈️"), 1)
@@ -133,7 +133,7 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.countEmoji("1 2 3"), 0)
   }
   
-  @available(iOS 10.2, *)
+  @available(macOS 10.12.2, iOS 10.2, tvOS 10.1, watchOS 3.1.1, *)
   func testIsEmojiOnly(){
     XCTAssertEqual(Smile.isEmojiOnly("🎈 and 🎁"), false)
     XCTAssertEqual(Smile.isEmojiOnly("👨‍✈️"), true)
@@ -145,7 +145,7 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.isEmojiOnly("*"), false)
   }
   
-  @available(iOS 10.2, *)
+  @available(macOS 10.12.2, iOS 10.2, tvOS 10.1, watchOS 3.1.1, *)
   func testIsSingleEmoji(){
     XCTAssertEqual(Smile.isSingleEmoji("🎈 and 🎁"), false)
     XCTAssertEqual(Smile.isSingleEmoji("👨‍✈️"), true)
@@ -157,7 +157,7 @@ class Tests: XCTestCase {
     XCTAssertEqual(Smile.isSingleEmoji("*"), false)
   }
   
-  @available(iOS 10.2, *)
+  @available(macOS 10.12.2, iOS 10.2, tvOS 10.1, watchOS 3.1.1, *)
   func testCountNonEmoji(){
     XCTAssertEqual(Smile.countNonEmoji("🎈 and 🎁"), 5)
     XCTAssertEqual(Smile.countNonEmoji("👨‍✈️"), 0)
