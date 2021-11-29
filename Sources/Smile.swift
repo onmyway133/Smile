@@ -70,32 +70,32 @@ public func unmodify(emoji: String) -> String {
 }
 
 /// Check if String is a simple emoji
-@available(iOS 10.2, *)
+@available(macOS 10.12.2, iOS 10.2, tvOS 10.1, watchOS 3.1.1, *)
 public func isSimpleEmoji(_ string: String) -> Bool{
   guard let firstScalar = string.unicodeScalars.first else { return false }
   return firstScalar.properties.isEmoji && firstScalar.value > 0x238C
 }
 
 /// Check if multiple scalars will be merged into an emoji
-@available(iOS 10.2, *)
+@available(macOS 10.12.2, iOS 10.2, tvOS 10.1, watchOS 3.1.1, *)
 public func isCombinedIntoEmoji(_ string: String) -> Bool{
   return string.unicodeScalars.count > 1 && string.unicodeScalars.first?.properties.isEmoji ?? false
 }
 
 /// Checks if string is emoji
-@available(iOS 10.2, *)
+@available(macOS 10.12.2, iOS 10.2, tvOS 10.1, watchOS 3.1.1, *)
 public func checkForEmoji(_ string: String) -> Bool{
   return isSimpleEmoji(string) || isCombinedIntoEmoji(string)
 }
 
 /// Checks if string contains an emoji
-@available(iOS 10.2, *)
+@available(macOS 10.12.2, iOS 10.2, tvOS 10.1, watchOS 3.1.1, *)
 public func containsEmoji(_ string: String) -> Bool{
   return countEmoji(string) > 0
 }
 
 /// Counts number of emoji characters found in string
-@available(iOS 10.2, *)
+@available(macOS 10.12.2, iOS 10.2, tvOS 10.1, watchOS 3.1.1, *)
 public func countEmoji(_ string: String) -> Int{
     var count = 0
     for char in string{
@@ -107,7 +107,7 @@ public func countEmoji(_ string: String) -> Int{
 }
 
 /// Counts number of non-emoji characters found in string
-@available(iOS 10.2, *)
+@available(macOS 10.12.2, iOS 10.2, tvOS 10.1, watchOS 3.1.1, *)
 public func countNonEmoji(_ string: String) -> Int{
     var count = 0
     for char in string{
@@ -119,13 +119,13 @@ public func countNonEmoji(_ string: String) -> Int{
 }
 
 /// Checks if string contains only emoji characters
-@available(iOS 10.2, *)
+@available(macOS 10.12.2, iOS 10.2, tvOS 10.1, watchOS 3.1.1, *)
 public func isEmojiOnly(_ string: String) -> Bool{
   return countEmoji(string) > 0 && countNonEmoji(string) == 0
 }
 
 /// Checks if string contains only one emoji
-@available(iOS 10.2,*)
+@available(macOS 10.12.2, iOS 10.2, tvOS 10.1, watchOS 3.1.1, *)
 public func isSingleEmoji(_ string: String) -> Bool{
   return string.count == 1 && containsEmoji(string)
 }
